@@ -78,24 +78,109 @@
 							</div>
 							<div class="s-s" :style="{'border-top': '4px solid '+ colorArr2[index]}"> </div>
 						</div>
-
 					</div>
 				</div>
-
 			</div>
 		</div>
-		<div class="sjzc border">
-			<div class="t"></div>
-			<div class="c"></div>
-			<div class="b"></div>
+		<div class="sjzc">
+			<div class="border">
+				<div class="title">
+					<span>数据资产</span>
+					<img src="./assets/sjhj/biaotibeijing.png" alt="">
+				</div>
+				<div class="c">
+					<div class="c-t f">
+						<img src="./assets/sjzc/icon1.png" alt="">
+						<div class="c-c">
+							<div class="c-c-t">数据资源种类</div>
+							<div class="c-c-c"><span
+									v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span></div>
+						</div>
+					</div>
+					<div class="c-t s" style="margin-left: 20px;">
+						<img src="./assets/sjzc/icon2.png" alt="">
+						<div class="c-c">
+							<div class="c-c-t">数据总量</div>
+							<div class="c-c-c"><span
+									v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span></div>
+						</div>
+					</div>
+				</div>
+				<img class="b" src="./assets/sjzc/bg.png" alt="">
+			</div>
+			<div class="c m">
+				<div class="f">
+					<div class="c-t">
+						<div class="c-c">
+							<div class="c-c-t">总量：</div>
+							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>万条</span>
+							</div>
+						</div>
+						<div class="c-c">
+							<div class="c-c-t">种类：</div>
+							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>条</span>
+							</div>
+						</div>
+					</div>
+					<div class="border c-icon">
+						<img src="./assets/sjzc/bc1.png" alt="">
+						<div class="f">图片库</div>
+					</div>
+				</div>
+				<div class="s">
+					<div class="c-t">
+						<div class="c-c">
+							<div class="c-c-t">总量：</div>
+							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>万条</span>
+							</div>
+						</div>
+						<div class="c-c">
+							<div class="c-c-t">种类：</div>
+							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>条</span>
+							</div>
+						</div>
+					</div>
+					<div class="border c-icon">
+						<img src="./assets/sjzc/bc2.png" alt="">
+						<div class="f">文件库</div>
+					</div>
+				</div>
+				<div class="r">
+					<div class="c-t">
+						<div class="c-c">
+							<div class="c-c-t">总量：</div>
+							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>万条</span>
+							</div>
+						</div>
+						<div class="c-c">
+							<div class="c-c-t">种类：</div>
+							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>条</span>
+							</div>
+						</div>
+					</div>
+					<div class="border c-icon">
+						<img src="./assets/sjzc/bc3.png" alt="">
+						<div class="f">日志库</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="sjzz border"></div>
-		<div class="sjtb border"></div>
+		<div class="sjgx border">
+			<div class="title">
+				<span>数据共享</span>
+				<img src="./assets/sjhj/biaotibeijing.png" alt="">
+			</div>
+		</div>
+		<div class="sjzz border">
+			<div class="a-t">数据增长情况</div>
+			<div id="sjzzChart" :style="{width: '100%', height: '300px'}"></div>
+		</div>
 		<div class="sjrd border"></div>
 	</div>
 </template>
 
 <script>
+	import * as echarts from 'echarts';
 	export default {
 		data() {
 			return {
@@ -104,15 +189,80 @@
 				colorArr2: ["#fbcbde", "#ffe1c3", "#bddbff", '#D2F6FF', '#D2F6FF'],
 			}
 		},
+		mounted() {
+			this.sjzzChart();
+		},
 		methods: {
 			fillNum(num) {
 				var r = "1";
 				for (var x = 0; x < (5 - num); x++) {
 					r += "0";
 				}
-				return Math.ceil((Math.random()+1)*r);
+				return Math.ceil((Math.random() + 1) * r);
+			},
+			sjzzChart() {
+				// 基于准备好的dom，初始化echarts实例
+				let myChart = echarts.init(document.getElementById('sjzzChart'))
+				// 绘制图表
+				myChart.setOption({
+					xAxis: {
+						type: 'category',
+						boundaryGap: false,
+						data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+						splitLine: {
+							show: true,
+							lineStyle: {
+								color: ['#28394e'],
+								width: 1,
+								type: 'solid'
+							}
+						}
+					},
+					yAxis: {
+						name: '万条',
+						type: 'value',
+						splitLine: {
+							show: true,
+							lineStyle: {
+								color: ['#28394e'],
+								width: 1,
+								type: 'solid',
+							}
+						},
+						// minorSplitLine:{
+						//  show: true,
+						// }
+					},
+
+					textStyle: {
+						color: '#9ab4ff',
+					},
+					axisLabel: {
+						color: '#9ab4ff',
+					},
+					grid: {
+						top: 45,
+						right: 20
+					},
+					series: [{
+						data: [820, 932, 901, 934, 1290, 1330, 1320, 1290, 820, 932, 901, 934],
+						type: 'line',
+						smooth: true,
+						areaStyle: {
+							opacity: 0.7,
+							color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgba(31, 79, 165)'
+							}, {
+								offset: 1,
+								color: '#171842'
+							}])
+						}
+					}]
+				});
 			}
 		},
+
 
 
 	}
@@ -121,6 +271,7 @@
 <style scoped lang="scss">
 	$fontSize:16px;
 	$fontColor:#34abff;
+	$fontColorgray:#9ab4ff;
 	$fontFamily:MicrosoftYaHei;
 	$red:#ab2d5d;
 	$lred:#fbcbde;
@@ -149,6 +300,7 @@
 		grid-column-gap: 20px;
 		background-color: #171842;
 		font-family: $fontFamily;
+		overflow: scroll;
 
 		.border {
 			border: 1px solid #3048ae;
@@ -196,6 +348,7 @@
 						justify-content: space-between;
 						align-items: flex-end;
 						color: #FFFFFF;
+						white-space: nowrap;
 
 						img {
 							margin-right: 10px;
@@ -241,8 +394,9 @@
 						flex-direction: column;
 						background-image: url(assets/sjhj/reg.png);
 						background-size: 100% 100%;
-						padding: 20px;
-						width: 20%;
+						// width: 20%;
+						padding: 10px 20px;
+						white-space: nowrap;
 
 						.f {
 							font-size: 14px;
@@ -313,7 +467,7 @@
 								align-items: center;
 								background-size: 100% 100%;
 								padding: 5px 30px 5px 10px;
-								white-space:nowrap;
+								white-space: nowrap;
 
 								.s-t-f {
 									margin-right: 10px;
@@ -372,11 +526,131 @@
 			}
 		}
 
+		.sjzz {
+			.a-t {
+				margin: 20px 0px 0px 20px;
+			}
+		}
+
 		.sjzc {
 			grid-row-start: 1;
 			grid-row-end: 3;
 			grid-column-start: 2;
 			grid-column-end: 3;
+
+			.c {
+				display: flex;
+				justify-content: center;
+				margin-top: 20px;
+
+				.c-t {
+					display: flex;
+					align-items: center;
+					background-image: url(assets/sjzc/icon-bg.png);
+					background-size: 100% 100%;
+					padding: 10px 20px;
+
+					img {
+						margin-right: 10px;
+					}
+
+					.c-c {
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+
+						.c-c-t {
+							color: $fontColorgray;
+							font-size: 16px;
+							margin-left: 4px;
+						}
+
+						.c-c-c {
+							white-space: nowrap;
+							span:first-child {
+								font-size: 30px;
+								margin-right: 4px;
+							}
+						}
+					}
+
+				}
+
+				.f {
+					.c-c-c {
+						span:first-child {
+							color: $orange;
+						}
+
+						span:nth-child(2) {
+							color: $dorange;
+						}
+					}
+					.f {
+						color: $orange;
+					}
+				}
+
+				.s {
+					margin-left: 20px;
+					.c-c-c {
+						span:first-child {
+							color: $green;
+						}
+
+						span:nth-child(2) {
+							color: $dgreen;
+						}
+					}
+					.f {
+						color: $green;
+					}
+				}
+				.r {
+					margin-left: 20px;
+					.c-c-c {
+						span:first-child {
+							color: $purple;
+						}
+				
+						span:nth-child(2) {
+							color: $purple;
+						}
+					}
+					.f {
+						color: $purple;
+					}
+				}
+			}
+
+			.b {
+				background-size: 100% 100%;
+				padding: 20px;
+			}
+
+			.m {
+				.c-t {
+					display: flex;
+					justify-content: space-between;
+
+					.c-c:nth-child(2) {
+						margin-left: 30px;
+					}
+				}
+
+				.c-icon {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					padding: 40px 40px 20px 40px;
+					flex-direction: column;
+					height: 140px;
+
+					.f {
+						margin-top: 20px;
+					}
+				}
+			}
 		}
 	}
 </style>
