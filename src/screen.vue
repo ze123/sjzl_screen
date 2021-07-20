@@ -540,7 +540,7 @@
 
 			.c {
 				display: flex;
-				justify-content: center;
+				justify-content: space-around;
 				margin-top: 20px;
 
 				.c-t {
@@ -629,6 +629,7 @@
 			}
 
 			.m {
+				justify-content: space-between;
 				.c-t {
 					display: flex;
 					justify-content: space-between;
