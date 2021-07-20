@@ -88,7 +88,7 @@
 					<span>数据资产</span>
 					<img src="./assets/sjhj/biaotibeijing.png" alt="">
 				</div>
-				<div class="c">
+				<div class="c a-c">
 					<div class="c-t f">
 						<img src="./assets/sjzc/icon1.png" alt="">
 						<div class="c-c">
@@ -108,7 +108,7 @@
 				</div>
 				<img class="b" src="./assets/sjzc/bg.png" alt="">
 			</div>
-			<div class="c m">
+			<div class="c m a-c">
 				<div class="f">
 					<div class="c-t">
 						<div class="c-c">
@@ -170,12 +170,65 @@
 				<span>数据共享</span>
 				<img src="./assets/sjhj/biaotibeijing.png" alt="">
 			</div>
+			<div class="b">
+				<div class="b-a">
+					<div class="b-t">
+						<div class="c-t-t">数据资源总数</div>
+						<div class="c-t-c f" v-text="Math.floor(Math.random()*10000+10000)"></div>
+					</div>
+					<div class="b-t">
+						<div class="c-t-t">数据总量</div>
+						<div class="c-t-c f" v-text="Math.floor(Math.random()*10000+10000)"></div>
+					</div>
+					<div class="b-t">
+						<div class="c-t-t">交换数据总量</div>
+						<div class="c-t-c f" v-text="Math.floor(Math.random()*10000+10000)"></div>
+					</div>
+				</div>
+				<div class="b-a">
+					<div class="b-t">
+						<div class="c-t-t">访问接口用户数</div>
+						<div class="c-t-c m" v-text="Math.floor(Math.random()*10000+10000)"></div>
+					</div>
+					<div class="b-t">
+						<div class="c-t-t">访问接口总数</div>
+						<div class="c-t-c m" v-text="Math.floor(Math.random()*10000+10000)"></div>
+					</div>
+				</div>
+			</div>
+			<div class="a-c">
+				<div class="c-t f">
+					<div class="c-c">
+						<div class="c-c-t">数据资源种类</div>
+						<div class="c-c-c"><span v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span>
+						</div>
+					</div>
+				</div>
+				<div class="c-t s" style="margin-left: 20px;">
+					<div class="c-c">
+						<div class="c-c-t">数据总量</div>
+						<div class="c-c-c"><span v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span>
+						</div>
+					</div>
+				</div>
+				<div class="c-t r" style="margin-left: 20px;">
+					<div class="c-c">
+						<div class="c-c-t">数据总量</div>
+						<div class="c-c-c"><span v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 		<div class="sjzz border">
 			<div class="a-t">数据增长情况</div>
 			<div id="sjzzChart" :style="{width: '100%', height: '300px'}"></div>
 		</div>
-		<div class="sjrd border"></div>
+		<div class="sjrd border">
+			<div class="a-t">热点数据TOP7</div>
+			<div id="sjrdChart" :style="{width: '100%', height: '300px'}"></div>
+		</div>
 	</div>
 </template>
 
@@ -191,6 +244,7 @@
 		},
 		mounted() {
 			this.sjzzChart();
+			this.sjrdChart();
 		},
 		methods: {
 			fillNum(num) {
@@ -260,15 +314,66 @@
 						}
 					}]
 				});
+			},
+			sjrdChart() {
+				let xAxisData = []
+				for (var x = 0; x < 7; x++) {
+					xAxisData.push("数据可视化")
+				}
+				var that = this;
+				// 基于准备好的dom，初始化echarts实例
+				let myChart = echarts.init(document.getElementById('sjrdChart'))
+				// 绘制图表
+				myChart.setOption({
+					xAxis: {
+						type: 'category',
+						data: xAxisData,
+						axisTick: {
+							show: false
+						},
+					},
+					yAxis: {
+						type: 'value',
+						splitLine: {
+							show: false,
+
+						},
+					},
+					grid: {
+						top: 45,
+						right: 20
+					},
+					axisLabel: {
+						color: '#9ab4ff',
+					},
+					series: [{
+						label: {
+							show: true,
+							position: 'top',
+							color: 'white'
+						},
+						itemStyle: {
+							color: function(params) {
+								// build a color map as your need.
+								var arr = [...that.colorArr1, ...["#31a6c4", "#31a6c4"]]
+								return arr[params.dataIndex]
+							},
+						},
+						data: [200, 150, 120, 80, 70, 50, 30],
+						type: 'bar',
+						showBackground: true,
+						backgroundStyle: {
+							color: 'rgba(29, 32, 74, 0.6)'
+						}
+					}]
+				});
 			}
 		},
-
-
 
 	}
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
 	$fontSize:16px;
 	$fontColor:#34abff;
 	$fontColorgray:#9ab4ff;
@@ -284,7 +389,27 @@
 	$lgreen:#D2F6FF;
 	$dgreen:#31a6c4;
 	$purple:#c148f5;
-
+	
+	// 1920 字体 19.2px 即  1rem === 192px
+	
+	$base_width: 1920;
+	$base_fontSize: 192;
+	
+	@function rem($px){
+	  @return $px / $base_fontSize * 1rem;
+	}
+	
+	// html {
+	//   font-size: ( $base_width / $base_fontSize) * 1vw;
+	//   @media screen and (max-width: 1200px) {
+	//     font-size: 120px;
+	//   }
+	//   width: 100%;
+	//   height: 100%;
+	//   min-width: 1200px;
+	//   min-height: 768px;
+	// }
+	
 	.screen {
 		width: 100%;
 		height: 100%;
@@ -325,6 +450,94 @@
 			font-size: 16px;
 			color: $fontColor;
 		}
+
+		@mixin a-c {
+			.c-t {
+				display: flex;
+				align-items: center;
+				background-image: url(assets/sjzc/icon-bg.png);
+				background-size: 100% 100%;
+				padding: 10px 20px;
+
+				img {
+					margin-right: 10px;
+				}
+
+				.c-c {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+
+					.c-c-t {
+						color: $fontColorgray;
+						font-size: 16px;
+						margin-left: 4px;
+					}
+
+					.c-c-c {
+						white-space: nowrap;
+
+						span:first-child {
+							font-size: 30px;
+							margin-right: 4px;
+						}
+					}
+				}
+			}
+
+			.f {
+				.c-c-c {
+					span:first-child {
+						color: $orange;
+					}
+
+					span:nth-child(2) {
+						color: $dorange;
+					}
+				}
+
+				.f {
+					color: $orange;
+				}
+			}
+
+			.s {
+				margin-left: 20px;
+
+				.c-c-c {
+					span:first-child {
+						color: $green;
+					}
+
+					span:nth-child(2) {
+						color: $dgreen;
+					}
+				}
+
+				.f {
+					color: $green;
+				}
+			}
+
+			.r {
+				margin-left: 20px;
+
+				.c-c-c {
+					span:first-child {
+						color: $purple;
+					}
+
+					span:nth-child(2) {
+						color: $purple;
+					}
+				}
+
+				.f {
+					color: $purple;
+				}
+			}
+		}
+
 
 		.sjhj {
 			.c {
@@ -367,19 +580,6 @@
 								background-image: url(assets/sjhj/icon-bg2.png);
 								width: 10%;
 							}
-
-							// span:nth-child(1){
-							// 	position: absolute;
-							// 	left: 4%;
-							// }
-							// span:nth-child(2){
-							// 	position: absolute;
-							// 	left: 19.5%;
-							// }
-							// span:nth-child(3){
-							// 	position: absolute;
-							// 	left: 32.5%;
-							// }
 						}
 					}
 				}
@@ -542,85 +742,7 @@
 				display: flex;
 				justify-content: space-around;
 				margin-top: 20px;
-
-				.c-t {
-					display: flex;
-					align-items: center;
-					background-image: url(assets/sjzc/icon-bg.png);
-					background-size: 100% 100%;
-					padding: 10px 20px;
-
-					img {
-						margin-right: 10px;
-					}
-
-					.c-c {
-						display: flex;
-						flex-direction: column;
-						align-items: flex-start;
-
-						.c-c-t {
-							color: $fontColorgray;
-							font-size: 16px;
-							margin-left: 4px;
-						}
-
-						.c-c-c {
-							white-space: nowrap;
-							span:first-child {
-								font-size: 30px;
-								margin-right: 4px;
-							}
-						}
-					}
-
-				}
-
-				.f {
-					.c-c-c {
-						span:first-child {
-							color: $orange;
-						}
-
-						span:nth-child(2) {
-							color: $dorange;
-						}
-					}
-					.f {
-						color: $orange;
-					}
-				}
-
-				.s {
-					margin-left: 20px;
-					.c-c-c {
-						span:first-child {
-							color: $green;
-						}
-
-						span:nth-child(2) {
-							color: $dgreen;
-						}
-					}
-					.f {
-						color: $green;
-					}
-				}
-				.r {
-					margin-left: 20px;
-					.c-c-c {
-						span:first-child {
-							color: $purple;
-						}
-				
-						span:nth-child(2) {
-							color: $purple;
-						}
-					}
-					.f {
-						color: $purple;
-					}
-				}
+				@include a-c
 			}
 
 			.b {
@@ -630,6 +752,7 @@
 
 			.m {
 				justify-content: space-between;
+
 				.c-t {
 					display: flex;
 					justify-content: space-between;
@@ -651,6 +774,71 @@
 						margin-top: 20px;
 					}
 				}
+			}
+		}
+
+		.sjgx {
+			@include a-c .b {
+				background-image: url(./assets/sjgx/bg.png);
+				background-size: 100% 100%;
+				display: flex;
+				flex-direction: column;
+				height: 680px;
+
+				.b-a {
+					display: flex;
+					justify-content: space-around;
+					margin-top: 20px;
+
+					.b-t {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						border: 3px solid $bule;
+						border-radius: 999999px;
+						width: 140px;
+						height: 140px;
+
+						.c-t-t {
+							color: $fontColorgray;
+							font-size: 14px;
+							margin-bottom: 15px;
+						}
+
+						.c-t-c {
+							font-size: 30px;
+						}
+
+						.c-t-c.f {
+							color: #fff000;
+						}
+
+						.c-t-c.m {
+							color: $green;
+						}
+					}
+				}
+			}
+
+			.a-c {
+				display: flex;
+				margin: 20px;
+
+				.c-t {
+					display: flex;
+					justify-content: space-between;
+
+					.c-c:nth-child(2) {
+						margin-left: 30px;
+					}
+				}
+			}
+		}
+
+		.sjrd {
+			.a-t {
+				margin: 20px 0px 0px 20px;
 			}
 		}
 	}
