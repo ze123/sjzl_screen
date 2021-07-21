@@ -13,7 +13,8 @@
 					<div class="c-c-c">
 						<img src="./assets/sjhj/graphchart1.png" alt="">
 						<div class="f">
-							<span v-for="(item,index) in 7" v-text="Math.floor(Math.random()*10)"></span>
+							<!-- <span v-for="(item,index) in 7" v-text="Math.floor(Math.random()*10)"></span> -->
+							<span v-for="(item,index) in sjhj.sjzl" v-text="item"></span>
 						</div>
 						条
 					</div>
@@ -22,21 +23,21 @@
 					<div class="c-b-t">
 						<div class="f">应用总数</div>
 						<div class="s">
-							<span>46564</span>
+							<span v-text="sjhj.yyzs">46564</span>
 							<span>万条</span>
 						</div>
 					</div>
 					<div class="c-b-t">
 						<div class="f">数据资源种类</div>
 						<div class="s">
-							<span>10304</span>
+							<span v-text="sjhj.sjzyzl">10304</span>
 							<span>种</span>
 						</div>
 					</div>
 					<div class="c-b-t">
 						<div class="f">数据日增量</div>
 						<div class="s">
-							<span>46564</span>
+							<span v-text="sjhj.sjrzl">46564</span>
 							<span>万条</span>
 						</div>
 					</div>
@@ -83,7 +84,7 @@
 			</div>
 		</div>
 		<div class="sjzc">
-			<div class="border">
+			<div class="border n">
 				<div class="title">
 					<span>数据资产</span>
 					<img src="./assets/sjhj/biaotibeijing.png" alt="">
@@ -106,7 +107,32 @@
 						</div>
 					</div>
 				</div>
-				<img class="b" src="./assets/sjzc/bg.png" alt="">
+				<div class="p p1">
+					<span>主题库</span>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+				</div>
+				<div class="p p2">
+					<span>专题库</span>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+				</div>
+				<div class="p p3">
+					<span>标签库</span>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+				</div>
+				<div class="p p4">
+					<span>标准库</span>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+				</div>
+				<div class="p p5">
+					<span>汇聚库</span>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
+					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+				</div>
+				<img claszqs="b" src="./assets/sjzc/bg.png" alt="">
 			</div>
 			<div class="c m a-c">
 				<div class="f">
@@ -124,7 +150,7 @@
 					</div>
 					<div class="border c-icon">
 						<img src="./assets/sjzc/bc1.png" alt="">
-						<div class="f">图片库</div>
+						<div class="c-c-b">图片库</div>
 					</div>
 				</div>
 				<div class="s">
@@ -142,7 +168,7 @@
 					</div>
 					<div class="border c-icon">
 						<img src="./assets/sjzc/bc2.png" alt="">
-						<div class="f">文件库</div>
+						<div class="c-c-b">文件库</div>
 					</div>
 				</div>
 				<div class="r">
@@ -160,7 +186,7 @@
 					</div>
 					<div class="border c-icon">
 						<img src="./assets/sjzc/bc3.png" alt="">
-						<div class="f">日志库</div>
+						<div class="c-c-b">日志库</div>
 					</div>
 				</div>
 			</div>
@@ -186,40 +212,40 @@
 					</div>
 				</div>
 				<div class="b-a">
-					<div class="b-t">
+					<div class="b-t x">
 						<div class="c-t-t">访问接口用户数</div>
 						<div class="c-t-c m" v-text="Math.floor(Math.random()*10000+10000)"></div>
 					</div>
-					<div class="b-t">
+					<div class="b-t y">
 						<div class="c-t-t">访问接口总数</div>
 						<div class="c-t-c m" v-text="Math.floor(Math.random()*10000+10000)"></div>
 					</div>
 				</div>
 			</div>
+			<div class="d">今日数据</div>
 			<div class="a-c">
 				<div class="c-t f">
 					<div class="c-c">
 						<div class="c-c-t">数据资源种类</div>
-						<div class="c-c-c"><span v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span>
+						<div class="c-c-c"><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>次</span>
 						</div>
 					</div>
 				</div>
-				<div class="c-t s" style="margin-left: 20px;">
+				<div class="c-t s">
 					<div class="c-c">
 						<div class="c-c-t">数据总量</div>
-						<div class="c-c-c"><span v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span>
+						<div class="c-c-c"><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>个</span>
 						</div>
 					</div>
 				</div>
-				<div class="c-t r" style="margin-left: 20px;">
+				<div class="c-t r">
 					<div class="c-c">
 						<div class="c-c-t">数据总量</div>
-						<div class="c-c-c"><span v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span>
+						<div class="c-c-c"><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>万条</span>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
 		<div class="sjzz border">
 			<div class="a-t">数据增长情况</div>
@@ -234,462 +260,61 @@
 
 <script>
 	import * as echarts from 'echarts';
+	import axios from 'axios';
 	export default {
 		data() {
 			return {
+				sjhj:{
+					sjzl:[],
+					yyzs:0,
+					sjzyzl:0,
+					sjrzl:0
+				},
 				sjhjArr: ['一', '二', '三', '四', '五'],
 				colorArr1: ["#ab2d5d", "#c47f3b", "#2d76cc", '#31a6c4', '#31a6c4'],
 				colorArr2: ["#fbcbde", "#ffe1c3", "#bddbff", '#D2F6FF', '#D2F6FF'],
 			}
 		},
 		created() {
-			var s = `
-		width: 100%;
-		height: 100%;
-		padding: rem(20);
-		box-sizing: border-box;
-		display: grid;
-		// grid-template-rows: 680px 340px;
-		// grid-template-columns: 540px 760px 540px;
-		// 作为响应式,大屏适配所有屏幕尺寸
-		// grid-template-rows: 2fr 1fr;
-		// grid-template-columns: 1fr 1.4fr 1fr;
-		grid-template-rows: rem(680) rem(340);
-		grid-template-columns: rem(540) rem(760) rem(540);
-		grid-row-gap: rem(20);
-		grid-column-gap: rem(20);
-		background-color: #171842;
-		font-family: $fontFamily;
-		font-size: rem(16);
-		// overflow: scroll;
-
-		.border {
-			border: rem(1) solid #3048ae;
-
-			.title {
-				display: grid;
-				font-size: rem(20);
-				color: $fontColor;
-				margin-top: rem(5);
-
-				span {
-					text-align: center;
-				}
-
-				img {
-					width: 100%;
-				}
-			}
-		}
-
-		.a-t {
-			font-size: rem(16);
-			color: $fontColor;
-		}
-
-		@mixin a-c {
-			.c-t {
-				display: flex;
-				align-items: center;
-				background-image: url(assets/sjzc/icon-bg.png);
-				background-size: 100% 100%;
-				padding: rem(10) rem(20);
-
-				img {
-					margin-right: rem(10);
-				}
-
-				.c-c {
-					display: flex;
-					flex-direction: column;
-					align-items: flex-start;
-
-					.c-c-t {
-						color: $fontColorgray;
-						font-size: rem(16);
-						margin-left: rem(4);
-					}
-
-					.c-c-c {
-						white-space: nowrap;
-
-						span:first-child {
-							font-size: 30px;
-							margin-right: 4px;
-						}
-					}
-				}
-			}
-
-			.f {
-				.c-c-c {
-					span:first-child {
-						color: $orange;
-					}
-
-					span:nth-child(2) {
-						color: $dorange;
-					}
-				}
-
-				.f {
-					color: $orange;
-				}
-			}
-
-			.s {
-				margin-left: 20px;
-
-				.c-c-c {
-					span:first-child {
-						color: $green;
-					}
-
-					span:nth-child(2) {
-						color: $dgreen;
-					}
-				}
-
-				.f {
-					color: $green;
-				}
-			}
-
-			.r {
-				margin-left: 20px;
-
-				.c-c-c {
-					span:first-child {
-						color: $purple;
-					}
-
-					span:nth-child(2) {
-						color: $purple;
-					}
-				}
-
-				.f {
-					color: $purple;
-				}
-			}
-		}
-
-
-		.sjhj {
-			.c {
-				margin: 20px;
-				padding: 20px;
-				background-image: url(assets/sjhj/reg-1.png);
-				background-size: 100% 100%;
-
-				.c-c {
-					display: flex;
-					flex-direction: column;
-
-					.c-c-t {
-						font-size: 14px;
-						color: #9ab4ff;
-						margin: rem(10) 0px;
-					}
-
-					.c-c-c {
-						display: flex;
-						justify-content: space-between;
-						align-items: flex-end;
-						color: #FFFFFF;
-						white-space: nowrap;
-
-						img {
-							margin-right: 10px;
-						}
-
-						.f {
-							flex: 1;
-							background-size: 100% 100%;
-							display: flex;
-							justify-content: space-around;
-
-							span {
-								display: flex;
-								justify-content: center;
-								font-size: 48px;
-								background-image: url(assets/sjhj/icon-bg2.png);
-								width: 10%;
-							}
-						}
-					}
-				}
-
-				.c-b {
-					display: flex;
-					justify-content: space-between;
-					margin-top: 20px;
-
-					.c-b-t {
-						display: flex;
-						flex-direction: column;
-						background-image: url(assets/sjhj/reg.png);
-						background-size: 100% 100%;
-						padding: rem(10) rem(16);
-						white-space: nowrap;
-						box-sizing: border-box;
-						width: 30%;
-
-						.f {
-							font-size: rem(14);
-							color: #c4d3ff;
-							margin-bottom: rem(6);
-						}
-
-						.s {
-							span:first-child {
-								font-size: rem(26);
-								margin-right: rem(4);
-							}
-						}
-
-					}
-
-					:first-child .s {
-						color: $orange;
-					}
-
-					:nth-child(2) .s {
-						color: $green;
-					}
-
-					:nth-child(3) .s {
-						color: $purple;
-					}
-				}
-			}
-
-			.b {
-				background-image: url(assets/sjhj/reg-2.png);
-				background-size: 100% 100%;
-				margin: 20px;
-				overflow: hidden;
-
-				.a-t {
-					margin: 20px 0px 0px 20px;
-				}
-
-				.b-c {
-					display: flex;
-					justify-content: space-between;
-
-					.f {
-						display: flex;
-						justify-content: space-between;
-						font-size: 14px;
-						color: #9ab4ff;
-						// margin: 20px 10px 20px 20px;
-						margin: rem(10);
-					}
-
-					.b-c-l,
-					.b-c-r {
-						// width: 50%;
-
-						// padding: 10px;
-						.s {
-							display: flex;
-							align-items: center;
-							justify-content: space-between;
-							margin-bottom: 10px;
-							padding-right: 10px;
-							color: white;
-
-							.s-t {
-								display: flex;
-								align-items: center;
-								background-size: 100% 100%;
-								padding: 5px 30px 5px 10px;
-								white-space: nowrap;
-
-								.s-t-f {
-									margin-right: 10px;
-									padding: 2px 3px;
-									border-radius: 3px;
-								}
-
-								.s-t-s {
-									font-size: 14px;
-								}
-							}
-
-							.s-c {
-								margin-left: 20px;
-							}
-						}
-					}
-
-					.b-c-l {
-						.s {
-							background-color: #34416C;
-							margin-bottom: 15px;
-						}
-					}
-
-					.b-c-r {
-						// margin-left: 20px;
-
-						.f {
-							margin-left: 2px;
-						}
-
-						.s {
-							flex-direction: column;
-
-							.s-f {
-								display: flex;
-								align-items: center;
-								justify-content: space-between;
-								width: 100%;
-
-								.s-t-f {
-									color: white;
-								}
-							}
-
-							.s-s {
-								height: 0px;
-								width: 100%;
-								border-radius: 10px;
-							}
-						}
-					}
-
-				}
-			}
-		}
-
-		.sjzz {
-			.a-t {
-				margin: 20px 0px 0px 20px;
-			}
-		}
-
-		.sjzc {
-			grid-row-start: 1;
-			grid-row-end: 3;
-			grid-column-start: 2;
-			grid-column-end: 3;
-
-			.c {
-				display: flex;
-				justify-content: space-around;
-				margin-top: 20px;
-				@include a-c
-			}
-
-			.b {
-				background-size: 100% 100%;
-				padding: 20px;
-			}
-
-			.m {
-				justify-content: space-between;
-
-				.c-t {
-					display: flex;
-					justify-content: space-between;
-
-					.c-c:nth-child(2) {
-						margin-left: 30px;
-					}
-				}
-
-				.c-icon {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					padding: 40px 40px 20px 40px;
-					flex-direction: column;
-					height: 140px;
-
-					.f {
-						margin-top: 20px;
-					}
-				}
-			}
-		}
-
-		.sjgx {
-			@include a-c .b {
-				background-image: url(./assets/sjgx/bg.png);
-				background-size: 100% 100%;
-				display: flex;
-				flex-direction: column;
-				height: 680px;
-
-				.b-a {
-					display: flex;
-					justify-content: space-around;
-					margin-top: 20px;
-
-					.b-t {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						justify-content: center;
-						border: 3px solid $bule;
-						border-radius: 999999px;
-						width: 140px;
-						height: 140px;
-
-						.c-t-t {
-							color: $fontColorgray;
-							font-size: 14px;
-							margin-bottom: 15px;
-						}
-
-						.c-t-c {
-							font-size: 30px;
-						}
-
-						.c-t-c.f {
-							color: #fff000;
-						}
-
-						.c-t-c.m {
-							color: $green;
-						}
-					}
-				}
-			}
-
-			.a-c {
-				display: flex;
-				margin: 20px;
-
-				.c-t {
-					display: flex;
-					justify-content: space-between;
-
-					.c-c:nth-child(2) {
-						margin-left: 30px;
-					}
-				}
-			}
-		}
-
-		.sjrd {
-			.a-t {
-				margin: 20px 0px 0px 20px;
-			}
-		}
-	`
-			console.log(s.replace(/ .*?px/g, function(str) {
-				return "rem(" + str.trim().split("px")[0] + ")";
-			}));
+			// 数据汇聚
+			this.getSjhjData();
 		},
 		mounted() {
 			document.getElementById("sjzzChart").style.width = Math.ceil(540 / 1920 * innerWidth) + "px";
+			document.getElementById("sjrdChart").style.width = Math.ceil(540 / 1920 * innerWidth) + "px";
 			this.sjzzChart();
 			this.sjrdChart();
 		},
 		methods: {
+			getData(url,params){
+				return axios.post(url,params?params:{})
+			},
+			getSjhjData(){
+				this.getData("/dataOrganization/view/queryCount").then(data=>{
+					var data=data.data.data
+					this.sjhj.sjzl=[];
+					var num=(data+"").split("");
+					for(var x=0;x<7;x++){
+						if(x>=num.length){
+							this.sjhj.sjzl.unshift(0)
+						}else{
+							this.sjhj.sjzl.push(num[x])
+						}
+					}
+				})
+				this.getData("dataOrganization/view/applicationCount").then(data=>{
+					var data=data.data.data
+					this.sjhj.yyzs=data;
+				})
+				this.getData("dataOrganization/view/dataResourceType").then(data=>{
+					var data=data.data.data
+					this.sjhj.sjzyzl=data;
+				})
+				this.getData("dataOrganization/view/dataResourceDayCount").then(data=>{
+					var data=data.data.data
+					this.sjhj.sjrzl=data;
+				})
+			},
 			fillNum(num) {
 				var r = "1";
 				for (var x = 0; x < (5 - num); x++) {
@@ -859,8 +484,8 @@
 	}
 
 	.screen {
-		width: 100%;
-		height: 100%;
+		width: rem(1920);
+		height: rem(1080);
 		padding: rem(20);
 		box-sizing: border-box;
 		display: grid;
@@ -947,7 +572,7 @@
 					}
 				}
 
-				.f {
+				.c-c-b {
 					color: $orange;
 				}
 			}
@@ -965,7 +590,7 @@
 					}
 				}
 
-				.f {
+				.c-c-b {
 					color: $green;
 				}
 			}
@@ -983,7 +608,7 @@
 					}
 				}
 
-				.f {
+				.c-c-b {
 					color: $purple;
 				}
 			}
@@ -1043,6 +668,7 @@
 					.c-b-t {
 						display: flex;
 						flex-direction: column;
+						justify-content: space-between;
 						background-image: url(assets/sjhj/reg.png);
 						background-size: 100% 100%;
 						padding: rem(10) rem(16);
@@ -1193,9 +819,12 @@
 
 			.c {
 				display: flex;
-				justify-content: space-around;
+				justify-content: center;
 				margin-top: rem(20);
-				@include a-c
+
+				@include a-c .c-t .c-c .c-c-c span:first-child {
+					font-size: rem(24);
+				}
 			}
 
 			.b {
@@ -1203,40 +832,115 @@
 				padding: rem(20);
 			}
 
-			.m {
-				justify-content: space-between;
+			.n {
+				height: rem(778);
+				text-align: center;
+				position: relative;
 
-				.c-t {
-					display: flex;
-					justify-content: space-between;
+				>img {
+					margin-top: rem(50);
+					width: 92%;
+				}
 
-					.c-c:nth-child(2) {
-						margin-left: rem(30);
+				.p {
+					position: absolute;
+					color: $green;
+					text-align: left;
+
+					>span {
+						font-size: rem(18);
+					}
+
+					div {
+						span:first-child {
+							font-size: rem(24);
+							margin-right: rem(4);
+						}
+
+						span:nth-child(2) {
+							color: $fontColorgray
+						}
 					}
 				}
 
-				.c-icon {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					padding: rem(40)rem(40)rem(20)rem(40);
-					flex-direction: column;
-					height: rem(140);
+				.p1 {
+					right: rem(170);
+					top: rem(160);
+				}
 
-					.f {
-						margin-top: rem(20);
+				.p2 {
+					right: rem(50);
+					top: rem(330);
+				}
+
+				.p3 {
+					right: rem(170);
+					bottom: rem(210);
+				}
+
+				.p4 {
+					color: $purple;
+					left: rem(280);
+					top: rem(205);
+				}
+
+				.p5 {
+					color: $orange;
+					bottom: rem(130);
+					left: rem(70);
+				}
+			}
+
+			.m {
+				// height: calc(100%-rem(242));
+				justify-content: space-between;
+				height: rem(242);
+
+				.f,
+				.s,
+				.r {
+					display: flex;
+					flex-direction: column;
+
+					.c-t {
+						display: flex;
+						justify-content: space-between;
+
+						.c-c:nth-child(2) {
+							margin-left: rem(30);
+						}
 					}
+
+					.c-icon {
+						flex: 1;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+
+						.c-c-b {
+							margin-top: rem(20);
+						}
+					}
+				}
+
+
+				>div {
+					width: rem(240);
 				}
 			}
 		}
 
 		.sjgx {
-			@include a-c .b {
+			@include a-c display: flex;
+			flex-direction: column;
+
+			.b {
 				background-image: url(./assets/sjgx/bg.png);
 				background-size: 100% 100%;
 				display: flex;
 				flex-direction: column;
-				height: rem(680);
+				flex: 1;
 
 				.b-a {
 					display: flex;
@@ -1250,13 +954,15 @@
 						justify-content: center;
 						border: rem(3) solid $bule;
 						border-radius: rem(999999);
-						width: rem(140);
-						height: rem(140);
+						width: rem(120);
+						height: rem(120);
+						background-color: #25265a;
 
 						.c-t-t {
 							color: $fontColorgray;
 							font-size: rem(14);
-							margin-bottom: rem(15);
+							margin-bottom: rem(5);
+							margin-top: rem(10);
 						}
 
 						.c-t-c {
@@ -1271,20 +977,39 @@
 							color: $green;
 						}
 					}
+
+					.b-t.x {
+						margin-left: rem(70);
+					}
+
+					.b-t.y {
+						margin-right: rem(70);
+					}
 				}
 			}
-
+			.d{
+				color: $fontColor;
+				text-align: center;
+			}
 			.a-c {
 				display: flex;
+				justify-content: space-between;
 				margin: rem(20);
 
 				.c-t {
 					display: flex;
 					justify-content: space-between;
+					box-sizing: border-box;
+					width: 30%;
+					padding: rem(10) rem(14);
 
-					.c-c:nth-child(2) {
-						margin-left: rem(30);
+					.c-c {
+						.c-c-t{
+							font-size: rem(14);
+						}
 					}
+
+					
 				}
 			}
 		}
