@@ -1,6 +1,5 @@
 <template>
 	<div class="screen">
-		<!-- 从这开始大屏代码 -->
 		<div class="sjhj border">
 			<div class="title">
 				<span>数据汇聚</span>
@@ -95,7 +94,7 @@
 						<div class="c-c">
 							<div class="c-c-t">数据资源种类</div>
 							<div class="c-c-c"><span
-									v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span></div>
+									v-text="fakeData(100000)"></span><span>条</span></div>
 						</div>
 					</div>
 					<div class="c-t s" style="margin-left: 20px;">
@@ -103,34 +102,34 @@
 						<div class="c-c">
 							<div class="c-c-t">数据总量</div>
 							<div class="c-c-c"><span
-									v-text="Math.floor(Math.random()*100000+100000)"></span><span>条</span></div>
+									v-text="fakeData(100000)"></span><span>条</span></div>
 						</div>
 					</div>
 				</div>
 				<div class="p p1">
 					<span>主题库</span>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
 				</div>
 				<div class="p p2">
 					<span>专题库</span>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
 				</div>
 				<div class="p p3">
 					<span>标签库</span>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
 				</div>
 				<div class="p p4">
 					<span>标准库</span>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
 				</div>
 				<div class="p p5">
 					<span>汇聚库</span>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>种</span></div>
-					<div><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>条</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
+					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
 				</div>
 				<img claszqs="b" src="./assets/sjzc/bg.png" alt="">
 			</div>
@@ -139,12 +138,12 @@
 					<div class="c-t">
 						<div class="c-c">
 							<div class="c-c-t">总量：</div>
-							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>万条</span>
+							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>万条</span>
 							</div>
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>条</span>
+							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>条</span>
 							</div>
 						</div>
 					</div>
@@ -157,12 +156,12 @@
 					<div class="c-t">
 						<div class="c-c">
 							<div class="c-c-t">总量：</div>
-							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>万条</span>
+							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>万条</span>
 							</div>
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>条</span>
+							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>条</span>
 							</div>
 						</div>
 					</div>
@@ -175,12 +174,12 @@
 					<div class="c-t">
 						<div class="c-c">
 							<div class="c-c-t">总量：</div>
-							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>万条</span>
+							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>万条</span>
 							</div>
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="Math.floor(Math.random()*1000+1000)"></span><span>条</span>
+							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>条</span>
 							</div>
 						</div>
 					</div>
@@ -200,25 +199,25 @@
 				<div class="b-a">
 					<div class="b-t">
 						<div class="c-t-t">数据资源总数</div>
-						<div class="c-t-c f" v-text="Math.floor(Math.random()*10000+10000)"></div>
+						<div class="c-t-c f" v-text="fakeData(10000)"></div>
 					</div>
 					<div class="b-t">
 						<div class="c-t-t">数据总量</div>
-						<div class="c-t-c f" v-text="Math.floor(Math.random()*10000+10000)"></div>
+						<div class="c-t-c f" v-text="fakeData(10000)"></div>
 					</div>
 					<div class="b-t">
 						<div class="c-t-t">交换数据总量</div>
-						<div class="c-t-c f" v-text="Math.floor(Math.random()*10000+10000)"></div>
+						<div class="c-t-c f" v-text="fakeData(10000)"></div>
 					</div>
 				</div>
 				<div class="b-a">
 					<div class="b-t x">
 						<div class="c-t-t">访问接口用户数</div>
-						<div class="c-t-c m" v-text="Math.floor(Math.random()*10000+10000)"></div>
+						<div class="c-t-c m" v-text="fakeData(10000)"></div>
 					</div>
 					<div class="b-t y">
 						<div class="c-t-t">访问接口总数</div>
-						<div class="c-t-c m" v-text="Math.floor(Math.random()*10000+10000)"></div>
+						<div class="c-t-c m" v-text="fakeData(10000)"></div>
 					</div>
 				</div>
 			</div>
@@ -227,21 +226,21 @@
 				<div class="c-t f">
 					<div class="c-c">
 						<div class="c-c-t">数据资源种类</div>
-						<div class="c-c-c"><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>次</span>
+						<div class="c-c-c"><span v-text="fakeData(10000)"></span><span>次</span>
 						</div>
 					</div>
 				</div>
 				<div class="c-t s">
 					<div class="c-c">
 						<div class="c-c-t">数据总量</div>
-						<div class="c-c-c"><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>个</span>
+						<div class="c-c-c"><span v-text="fakeData(10000)"></span><span>个</span>
 						</div>
 					</div>
 				</div>
 				<div class="c-t r">
 					<div class="c-c">
 						<div class="c-c-t">数据总量</div>
-						<div class="c-c-c"><span v-text="Math.floor(Math.random()*10000+10000)"></span><span>万条</span>
+						<div class="c-c-c"><span v-text="fakeData(10000)"></span><span>万条</span>
 						</div>
 					</div>
 				</div>
@@ -249,11 +248,11 @@
 		</div>
 		<div class="sjzz border">
 			<div class="a-t">数据增长情况</div>
-			<div id="sjzzChart" :style="{height: '300px'}"></div>
+			<div id="sjzzChart" :style="style"></div>
 		</div>
 		<div class="sjrd border">
 			<div class="a-t">热点数据TOP7</div>
-			<div id="sjrdChart" :style="{width: '100%', height: '300px'}"></div>
+			<div id="sjrdChart" :style="style"></div>
 		</div>
 	</div>
 </template>
@@ -264,15 +263,21 @@
 	export default {
 		data() {
 			return {
-				sjhj:{
-					sjzl:[],
-					yyzs:0,
-					sjzyzl:0,
-					sjrzl:0
+				sjhj: {
+					sjzl: [],
+					yyzs: this.fakeData(10000),
+					sjzyzl: this.fakeData(10000),
+					sjrzl: this.fakeData(10000)
 				},
 				sjhjArr: ['一', '二', '三', '四', '五'],
 				colorArr1: ["#ab2d5d", "#c47f3b", "#2d76cc", '#31a6c4', '#31a6c4'],
 				colorArr2: ["#fbcbde", "#ffe1c3", "#bddbff", '#D2F6FF', '#D2F6FF'],
+				style: {
+					width: Math.ceil(540 / 1920 * innerWidth) + "px",
+					height: Math.ceil(280 / 19.2 * innerWidth / 100) + "px"
+				},
+				sjrdChart: null,
+				sjzzChart: null,
 			}
 		},
 		created() {
@@ -280,40 +285,70 @@
 			this.getSjhjData();
 		},
 		mounted() {
-			document.getElementById("sjzzChart").style.width = Math.ceil(540 / 1920 * innerWidth) + "px";
-			document.getElementById("sjrdChart").style.width = Math.ceil(540 / 1920 * innerWidth) + "px";
-			this.sjzzChart();
-			this.sjrdChart();
+			this.sjzzChartFun();
+			this.sjrdChartFun();
+			// 响应式echart。添加防抖，每半秒重渲染
+			window.addEventListener("resize", this.resizeFun());
 		},
 		methods: {
-			getData(url,params){
-				return axios.post(url,params?params:{})
+			resizeFun() {
+				var debounce = (fun, num) => {
+					var timer = null;
+					return function() {
+						if (timer) {
+							clearTimeout(timer)
+						}
+						timer = setTimeout(function() {
+							fun();
+						}, num)
+					}
+				}
+				return debounce(() => {
+					this.style = {
+						width: Math.ceil(540 / 1920 * innerWidth) + "px",
+						height: Math.ceil(280 / 19.2 * innerWidth / 100) + "px"
+					}
+					// console.log(this.style);
+					setTimeout(() => {
+						this.sjzzChart.resize();
+						this.sjrdChart.resize();
+					})
+				}, 500)
 			},
-			getSjhjData(){
-				this.getData("/dataOrganization/view/queryCount").then(data=>{
-					var data=data.data.data
-					this.sjhj.sjzl=[];
-					var num=(data+"").split("");
-					for(var x=0;x<7;x++){
-						if(x>=num.length){
+			getData(url, params) {
+				return axios.post(url, params ? params : {})
+			},
+			getSjhjData() {
+				for (var x = 0; x < 7; x++) {
+					this.sjhj.sjzl.push(Math.floor(Math.random() * 10))
+				}
+				this.getData("/dataOrganization/view/queryCount").then(data => {
+					var data = data.data.data
+					this.sjhj.sjzl = [];
+					var num = (data + "").split("");
+					for (var x = 0; x < 7; x++) {
+						if (x >= num.length) {
 							this.sjhj.sjzl.unshift(0)
-						}else{
+						} else {
 							this.sjhj.sjzl.push(num[x])
 						}
 					}
 				})
-				this.getData("dataOrganization/view/applicationCount").then(data=>{
-					var data=data.data.data
-					this.sjhj.yyzs=data;
+				this.getData("dataOrganization/view/applicationCount").then(data => {
+					var data = data.data.data
+					this.sjhj.yyzs = data;
 				})
-				this.getData("dataOrganization/view/dataResourceType").then(data=>{
-					var data=data.data.data
-					this.sjhj.sjzyzl=data;
+				this.getData("dataOrganization/view/dataResourceType").then(data => {
+					var data = data.data.data
+					this.sjhj.sjzyzl = data;
 				})
-				this.getData("dataOrganization/view/dataResourceDayCount").then(data=>{
-					var data=data.data.data
-					this.sjhj.sjrzl=data;
+				this.getData("dataOrganization/view/dataResourceDayCount").then(data => {
+					var data = data.data.data
+					this.sjhj.sjrzl = data;
 				})
+			},
+			fakeData(num){
+				return Math.floor(Math.random()*num+num)
 			},
 			fillNum(num) {
 				var r = "1";
@@ -322,11 +357,11 @@
 				}
 				return Math.ceil((Math.random() + 1) * r);
 			},
-			sjzzChart() {
+			sjzzChartFun() {
 				// 基于准备好的dom，初始化echarts实例
-				let myChart = echarts.init(document.getElementById('sjzzChart'))
+				this.sjzzChart = echarts.init(document.getElementById('sjzzChart'))
 				// 绘制图表
-				myChart.setOption({
+				this.sjzzChart.setOption({
 					xAxis: {
 						type: 'category',
 						boundaryGap: false,
@@ -364,7 +399,8 @@
 					},
 					grid: {
 						top: 45,
-						right: 20
+						right: 20,
+						bottom: 20
 					},
 					series: [{
 						data: [820, 932, 901, 934, 1290, 1330, 1320, 1290, 820, 932, 901, 934],
@@ -383,16 +419,16 @@
 					}]
 				});
 			},
-			sjrdChart() {
+			sjrdChartFun() {
 				let xAxisData = []
 				for (var x = 0; x < 7; x++) {
 					xAxisData.push("数据可视化")
 				}
 				var that = this;
 				// 基于准备好的dom，初始化echarts实例
-				let myChart = echarts.init(document.getElementById('sjrdChart'))
+				this.sjrdChart = echarts.init(document.getElementById('sjrdChart'))
 				// 绘制图表
-				myChart.setOption({
+				this.sjrdChart.setOption({
 					xAxis: {
 						type: 'category',
 						data: xAxisData,
@@ -409,7 +445,8 @@
 					},
 					grid: {
 						top: 45,
-						right: 20
+						right: 20,
+						bottom: 20
 					},
 					axisLabel: {
 						color: '#9ab4ff',
@@ -459,8 +496,6 @@
 	$purple:#c148f5;
 
 	// 1920 字体 19.2px 即  1rem === 192px
-
-
 	@function rem($px) {
 		@return $px / 19.2 * 1rem;
 	}
@@ -470,15 +505,18 @@
 
 	// 1 vw=25.6px  2560
 	// x vw=?px
-	html {
+	html,
+	body {
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
+		// height: 100%;
+		height: rem(1080);
 		font-size: 1vw;
 
-		@media screen and (max-width: 1200px) {
-			font-size: 120px;
-		}
-
-		width: 100%;
-		height: 100%;
+		// @media screen and (max-width: 1200px) {
+		// 	font-size: 120px;
+		// }
 		min-width: 1200px;
 		min-height: 768px;
 	}
@@ -987,10 +1025,12 @@
 					}
 				}
 			}
-			.d{
+
+			.d {
 				color: $fontColor;
 				text-align: center;
 			}
+
 			.a-c {
 				display: flex;
 				justify-content: space-between;
@@ -1004,12 +1044,12 @@
 					padding: rem(10) rem(14);
 
 					.c-c {
-						.c-c-t{
+						.c-c-t {
 							font-size: rem(14);
 						}
 					}
 
-					
+
 				}
 			}
 		}
@@ -1020,442 +1060,4 @@
 			}
 		}
 	}
-
-	// .screen {
-	// 	width: 100%;
-	// 	height: 100%;
-	// 	padding: rem(20);
-	// 	box-sizing: border-box;
-	// 	display: grid;
-	// 	// grid-template-rows: 680px 340px;
-	// 	// grid-template-columns: 540px 760px 540px;
-	// 	// 作为响应式,大屏适配所有屏幕尺寸
-	// 	// grid-template-rows: 2fr 1fr;
-	// 	// grid-template-columns: 1fr 1.4fr 1fr;
-	// 	grid-template-rows: rem(680) rem(340);
-	// 	grid-template-columns: rem(540) rem(760) rem(540);
-	// 	grid-row-gap: rem(20);
-	// 	grid-column-gap: rem(20);
-	// 	background-color: #171842;
-	// 	font-family: $fontFamily;
-	// 	font-size: rem(16);
-	// 	// overflow: scroll;
-
-	// 	.border {
-	// 		border: rem(1) solid #3048ae;
-
-	// 		.title {
-	// 			display: grid;
-	// 			font-size: rem(20);
-	// 			color: $fontColor;
-	// 			margin-top: rem(5);
-
-	// 			span {
-	// 				text-align: center;
-	// 			}
-
-	// 			img {
-	// 				width: 100%;
-	// 			}
-	// 		}
-	// 	}
-
-	// 	.a-t {
-	// 		font-size: rem(16);
-	// 		color: $fontColor;
-	// 	}
-
-	// 	@mixin a-c {
-	// 		.c-t {
-	// 			display: flex;
-	// 			align-items: center;
-	// 			background-image: url(assets/sjzc/icon-bg.png);
-	// 			background-size: 100% 100%;
-	// 			padding: rem(10) rem(20);
-
-	// 			img {
-	// 				margin-right: rem(10);
-	// 			}
-
-	// 			.c-c {
-	// 				display: flex;
-	// 				flex-direction: column;
-	// 				align-items: flex-start;
-
-	// 				.c-c-t {
-	// 					color: $fontColorgray;
-	// 					font-size: rem(16);
-	// 					margin-left: rem(4);
-	// 				}
-
-	// 				.c-c-c {
-	// 					white-space: nowrap;
-
-	// 					span:first-child {
-	// 						font-size: 30px;
-	// 						margin-right: 4px;
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-
-	// 		.f {
-	// 			.c-c-c {
-	// 				span:first-child {
-	// 					color: $orange;
-	// 				}
-
-	// 				span:nth-child(2) {
-	// 					color: $dorange;
-	// 				}
-	// 			}
-
-	// 			.f {
-	// 				color: $orange;
-	// 			}
-	// 		}
-
-	// 		.s {
-	// 			margin-left: 20px;
-
-	// 			.c-c-c {
-	// 				span:first-child {
-	// 					color: $green;
-	// 				}
-
-	// 				span:nth-child(2) {
-	// 					color: $dgreen;
-	// 				}
-	// 			}
-
-	// 			.f {
-	// 				color: $green;
-	// 			}
-	// 		}
-
-	// 		.r {
-	// 			margin-left: 20px;
-
-	// 			.c-c-c {
-	// 				span:first-child {
-	// 					color: $purple;
-	// 				}
-
-	// 				span:nth-child(2) {
-	// 					color: $purple;
-	// 				}
-	// 			}
-
-	// 			.f {
-	// 				color: $purple;
-	// 			}
-	// 		}
-	// 	}
-
-
-	// 	.sjhj {
-	// 		.c {
-	// 			margin: 20px;
-	// 			padding: 20px;
-	// 			background-image: url(assets/sjhj/reg-1.png);
-	// 			background-size: 100% 100%;
-
-	// 			.c-c {
-	// 				display: flex;
-	// 				flex-direction: column;
-
-	// 				.c-c-t {
-	// 					font-size: 14px;
-	// 					color: #9ab4ff;
-	// 					margin: rem(10) 0px;
-	// 				}
-
-	// 				.c-c-c {
-	// 					display: flex;
-	// 					justify-content: space-between;
-	// 					align-items: flex-end;
-	// 					color: #FFFFFF;
-	// 					white-space: nowrap;
-
-	// 					img {
-	// 						margin-right: 10px;
-	// 					}
-
-	// 					.f {
-	// 						flex: 1;
-	// 						background-size: 100% 100%;
-	// 						display: flex;
-	// 						justify-content: space-around;
-
-	// 						span {
-	// 							display: flex;
-	// 							justify-content: center;
-	// 							font-size: 48px;
-	// 							background-image: url(assets/sjhj/icon-bg2.png);
-	// 							width: 10%;
-	// 						}
-	// 					}
-	// 				}
-	// 			}
-
-	// 			.c-b {
-	// 				display: flex;
-	// 				justify-content: space-between;
-	// 				margin-top: 20px;
-
-	// 				.c-b-t {
-	// 					display: flex;
-	// 					flex-direction: column;
-	// 					background-image: url(assets/sjhj/reg.png);
-	// 					background-size: 100% 100%;
-	// 					padding: rem(10) rem(16);
-	// 					white-space: nowrap;
-	// 					box-sizing: border-box;
-	// 					width: 30%;
-
-	// 					.f {
-	// 						font-size: rem(14);
-	// 						color: #c4d3ff;
-	// 						margin-bottom: rem(6);
-	// 					}
-
-	// 					.s {
-	// 						span:first-child {
-	// 							font-size: rem(26);
-	// 							margin-right: rem(4);
-	// 						}
-	// 					}
-
-	// 				}
-
-	// 				:first-child .s {
-	// 					color: $orange;
-	// 				}
-
-	// 				:nth-child(2) .s {
-	// 					color: $green;
-	// 				}
-
-	// 				:nth-child(3) .s {
-	// 					color: $purple;
-	// 				}
-	// 			}
-	// 		}
-
-	// 		.b {
-	// 			background-image: url(assets/sjhj/reg-2.png);
-	// 			background-size: 100% 100%;
-	// 			margin: 20px;
-	// 			overflow: hidden;
-
-	// 			.a-t {
-	// 				margin: 20px 0px 0px 20px;
-	// 			}
-
-	// 			.b-c {
-	// 				display: flex;
-	// 				justify-content: space-between;
-
-	// 				.f {
-	// 					display: flex;
-	// 					justify-content: space-between;
-	// 					font-size: 14px;
-	// 					color: #9ab4ff;
-	// 					// margin: 20px 10px 20px 20px;
-	// 					margin: rem(10);
-	// 				}
-
-	// 				.b-c-l,
-	// 				.b-c-r {
-	// 					// width: 50%;
-
-	// 					// padding: 10px;
-	// 					.s {
-	// 						display: flex;
-	// 						align-items: center;
-	// 						justify-content: space-between;
-	// 						margin-bottom: 10px;
-	// 						padding-right: 10px;
-	// 						color: white;
-
-	// 						.s-t {
-	// 							display: flex;
-	// 							align-items: center;
-	// 							background-size: 100% 100%;
-	// 							padding: 5px 30px 5px 10px;
-	// 							white-space: nowrap;
-
-	// 							.s-t-f {
-	// 								margin-right: 10px;
-	// 								padding: 2px 3px;
-	// 								border-radius: 3px;
-	// 							}
-
-	// 							.s-t-s {
-	// 								font-size: 14px;
-	// 							}
-	// 						}
-
-	// 						.s-c {
-	// 							margin-left: 20px;
-	// 						}
-	// 					}
-	// 				}
-
-	// 				.b-c-l {
-	// 					.s {
-	// 						background-color: #34416C;
-	// 						margin-bottom: 15px;
-	// 					}
-	// 				}
-
-	// 				.b-c-r {
-	// 					// margin-left: 20px;
-
-	// 					.f {
-	// 						margin-left: 2px;
-	// 					}
-
-	// 					.s {
-	// 						flex-direction: column;
-
-	// 						.s-f {
-	// 							display: flex;
-	// 							align-items: center;
-	// 							justify-content: space-between;
-	// 							width: 100%;
-
-	// 							.s-t-f {
-	// 								color: white;
-	// 							}
-	// 						}
-
-	// 						.s-s {
-	// 							height: 0px;
-	// 							width: 100%;
-	// 							border-radius: 10px;
-	// 						}
-	// 					}
-	// 				}
-
-	// 			}
-	// 		}
-	// 	}
-
-	// 	.sjzz {
-	// 		.a-t {
-	// 			margin: 20px 0px 0px 20px;
-	// 		}
-	// 	}
-
-	// 	.sjzc {
-	// 		grid-row-start: 1;
-	// 		grid-row-end: 3;
-	// 		grid-column-start: 2;
-	// 		grid-column-end: 3;
-
-	// 		.c {
-	// 			display: flex;
-	// 			justify-content: space-around;
-	// 			margin-top: 20px;
-	// 			@include a-c
-	// 		}
-
-	// 		.b {
-	// 			background-size: 100% 100%;
-	// 			padding: 20px;
-	// 		}
-
-	// 		.m {
-	// 			justify-content: space-between;
-
-	// 			.c-t {
-	// 				display: flex;
-	// 				justify-content: space-between;
-
-	// 				.c-c:nth-child(2) {
-	// 					margin-left: 30px;
-	// 				}
-	// 			}
-
-	// 			.c-icon {
-	// 				display: flex;
-	// 				justify-content: center;
-	// 				align-items: center;
-	// 				padding: 40px 40px 20px 40px;
-	// 				flex-direction: column;
-	// 				height: 140px;
-
-	// 				.f {
-	// 					margin-top: 20px;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-
-	// 	.sjgx {
-	// 		@include a-c .b {
-	// 			background-image: url(./assets/sjgx/bg.png);
-	// 			background-size: 100% 100%;
-	// 			display: flex;
-	// 			flex-direction: column;
-	// 			height: 680px;
-
-	// 			.b-a {
-	// 				display: flex;
-	// 				justify-content: space-around;
-	// 				margin-top: 20px;
-
-	// 				.b-t {
-	// 					display: flex;
-	// 					flex-direction: column;
-	// 					align-items: center;
-	// 					justify-content: center;
-	// 					border: 3px solid $bule;
-	// 					border-radius: 999999px;
-	// 					width: 140px;
-	// 					height: 140px;
-
-	// 					.c-t-t {
-	// 						color: $fontColorgray;
-	// 						font-size: 14px;
-	// 						margin-bottom: 15px;
-	// 					}
-
-	// 					.c-t-c {
-	// 						font-size: 30px;
-	// 					}
-
-	// 					.c-t-c.f {
-	// 						color: #fff000;
-	// 					}
-
-	// 					.c-t-c.m {
-	// 						color: $green;
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-
-	// 		.a-c {
-	// 			display: flex;
-	// 			margin: 20px;
-
-	// 			.c-t {
-	// 				display: flex;
-	// 				justify-content: space-between;
-
-	// 				.c-c:nth-child(2) {
-	// 					margin-left: 30px;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-
-	// 	.sjrd {
-	// 		.a-t {
-	// 			margin: 20px 0px 0px 20px;
-	// 		}
-	// 	}
-	// }
 </style>
