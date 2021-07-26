@@ -91,41 +91,41 @@
 						<img src="./assets/sjzc/icon1.png" alt="">
 						<div class="c-c">
 							<div class="c-c-t">数据资源种类</div>
-							<div class="c-c-c"><span v-text="fakeData(100000)"></span><span>条</span></div>
+							<div class="c-c-c"><span v-text="randomData(100000)"></span><span>条</span></div>
 						</div>
 					</div>
 					<div class="c-t s" style="margin-left: 20px;">
 						<img src="./assets/sjzc/icon2.png" alt="">
 						<div class="c-c">
 							<div class="c-c-t">数据总量</div>
-							<div class="c-c-c"><span v-text="fakeData(100000)"></span><span>条</span></div>
+							<div class="c-c-c"><span v-text="randomData(100000)"></span><span>条</span></div>
 						</div>
 					</div>
 				</div>
 				<div class="p p1">
 					<span>主题库</span>
-					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
-					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
+					<div><span v-text="randomData(10000)"></span><span>种</span></div>
+					<div><span v-text="randomData(10000)"></span><span>条</span></div>
 				</div>
 				<div class="p p2">
 					<span>专题库</span>
-					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
-					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
+					<div><span v-text="randomData(10000)"></span><span>种</span></div>
+					<div><span v-text="randomData(10000)"></span><span>条</span></div>
 				</div>
 				<div class="p p3">
 					<span>标签库</span>
-					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
-					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
+					<div><span v-text="randomData(10000)"></span><span>种</span></div>
+					<div><span v-text="randomData(10000)"></span><span>条</span></div>
 				</div>
 				<div class="p p4">
 					<span>标准库</span>
-					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
-					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
+					<div><span v-text="randomData(10000)"></span><span>种</span></div>
+					<div><span v-text="randomData(10000)"></span><span>条</span></div>
 				</div>
 				<div class="p p5">
 					<span>汇聚库</span>
-					<div><span v-text="fakeData(10000)"></span><span>种</span></div>
-					<div><span v-text="fakeData(10000)"></span><span>条</span></div>
+					<div><span v-text="randomData(10000)"></span><span>种</span></div>
+					<div><span v-text="randomData(10000)"></span><span>条</span></div>
 				</div>
 				<img claszqs="b" src="./assets/sjzc/bg.png" alt="">
 			</div>
@@ -134,12 +134,12 @@
 					<div class="c-t">
 						<div class="c-c">
 							<div class="c-c-t">总量：</div>
-							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>万条</span>
+							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>万条</span>
 							</div>
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>条</span>
+							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>条</span>
 							</div>
 						</div>
 					</div>
@@ -152,12 +152,12 @@
 					<div class="c-t">
 						<div class="c-c">
 							<div class="c-c-t">总量：</div>
-							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>万条</span>
+							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>万条</span>
 							</div>
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>条</span>
+							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>条</span>
 							</div>
 						</div>
 					</div>
@@ -170,12 +170,12 @@
 					<div class="c-t">
 						<div class="c-c">
 							<div class="c-c-t">总量：</div>
-							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>万条</span>
+							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>万条</span>
 							</div>
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="fakeData(1000)"></span><span>条</span>
+							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>条</span>
 							</div>
 						</div>
 					</div>
@@ -195,25 +195,25 @@
 				<div class="b-a">
 					<div class="b-t">
 						<div class="c-t-t">数据资源总数</div>
-						<div class="c-t-c f" v-text="fakeData(10000)"></div>
+						<div class="c-t-c f" v-text="randomData(10000)"></div>
 					</div>
 					<div class="b-t">
 						<div class="c-t-t">数据总量</div>
-						<div class="c-t-c f" v-text="fakeData(10000)"></div>
+						<div class="c-t-c f" v-text="randomData(10000)"></div>
 					</div>
 					<div class="b-t">
 						<div class="c-t-t">交换数据总量</div>
-						<div class="c-t-c f" v-text="fakeData(10000)"></div>
+						<div class="c-t-c f" v-text="randomData(10000)"></div>
 					</div>
 				</div>
 				<div class="b-a">
 					<div class="b-t x">
 						<div class="c-t-t">访问接口用户数</div>
-						<div class="c-t-c m" v-text="fakeData(10000)"></div>
+						<div class="c-t-c m" v-text="randomData(10000)"></div>
 					</div>
 					<div class="b-t y">
 						<div class="c-t-t">访问接口总数</div>
-						<div class="c-t-c m" v-text="fakeData(10000)"></div>
+						<div class="c-t-c m" v-text="randomData(10000)"></div>
 					</div>
 				</div>
 			</div>
@@ -222,21 +222,21 @@
 				<div class="c-t f">
 					<div class="c-c">
 						<div class="c-c-t">数据资源种类</div>
-						<div class="c-c-c"><span v-text="fakeData(10000)"></span><span>次</span>
+						<div class="c-c-c"><span v-text="randomData(10000)"></span><span>次</span>
 						</div>
 					</div>
 				</div>
 				<div class="c-t s">
 					<div class="c-c">
 						<div class="c-c-t">数据总量</div>
-						<div class="c-c-c"><span v-text="fakeData(10000)"></span><span>个</span>
+						<div class="c-c-c"><span v-text="randomData(10000)"></span><span>个</span>
 						</div>
 					</div>
 				</div>
 				<div class="c-t r">
 					<div class="c-c">
 						<div class="c-c-t">数据总量</div>
-						<div class="c-c-c"><span v-text="fakeData(10000)"></span><span>万条</span>
+						<div class="c-c-c"><span v-text="randomData(10000)"></span><span>万条</span>
 						</div>
 					</div>
 				</div>
@@ -261,9 +261,9 @@
 			return {
 				sjhj: {
 					sjzl: [],
-					yyzs: this.fakeData(10000),
-					sjzyzl: this.fakeData(10000),
-					sjrzl: this.fakeData(10000),
+					yyzs: this.randomData(10000),
+					sjzyzl: this.randomData(10000),
+					sjrzl: this.randomData(10000),
 					yyxtl: [],
 					yyxtr: [],
 					sjzz: []
@@ -273,8 +273,8 @@
 				colorArr1: ["#ab2d5d", "#c47f3b", "#2d76cc", '#31a6c4', '#31a6c4'],
 				colorArr2: ["#fbcbde", "#ffe1c3", "#bddbff", '#D2F6FF', '#D2F6FF'],
 				style: {
-					width: Math.ceil(540 / 1920 * innerWidth) + "px",
-					height: Math.ceil(280 / 19.2 * innerWidth / 100) + "px"
+					width: this.resize(540) + "px",
+					height: this.resize(280) + "px"
 				},
 				sjrdChart: null,
 				sjzzChart: null,
@@ -282,7 +282,7 @@
 		},
 		created() {
 			if (location.search.includes("randomdata")) {
-				this.getFakeData();
+				this.getrandomData();
 				return;
 			}
 			// 数据汇聚
@@ -313,8 +313,8 @@
 				}
 				return debounce(() => {
 					this.style = {
-						width: Math.ceil(540 / 1920 * innerWidth) + "px",
-						height: Math.ceil(280 / 19.2 * innerWidth / 100) + "px"
+						width: this.resize(540) + "px",
+						height: this.resize(280) + "px"
 					}
 					// console.log(this.style);
 					setTimeout(() => {
@@ -327,13 +327,13 @@
 					})
 				}, 500)
 			},
-			resize(px){
-				return px*innerWidth/1920;
+			resize(px) {
+				return Math.ceil(px * innerWidth / 1920);
 			},
 			getData(url, params) {
 				return axios.post(url, params ? params : {})
 			},
-			getFakeData() {
+			getrandomData() {
 				for (var x = 0; x < 7; x++) {
 					this.sjhj.sjzl.push(Math.floor(Math.random() * (x + 3)))
 				}
@@ -405,7 +405,7 @@
 					this.sjzc = data;
 				})
 			},
-			fakeData(num) {
+			randomData(num) {
 				return Math.floor(Math.random() * num + num)
 			},
 			fillNum(num) {
@@ -464,7 +464,7 @@
 							fill: '#9ab4ff',
 							textAlign: 'right',
 							text: '万条',
-							font: this.resize(14)+'px Microsoft YaHei'
+							font: this.resize(14) + 'px Microsoft YaHei'
 						}
 					}, {
 						type: 'text',
@@ -475,12 +475,18 @@
 							fill: '#34abff',
 							textAlign: 'right',
 							text: '周\t\t\t\t\t月\t\t\t\t\t年',
-							font: this.resize(14)+'px Microsoft YaHei'
+							font: this.resize(14) + 'px Microsoft YaHei'
 						}
 					}],
 					axisLabel: {
 						color: '#9ab4ff',
 					},
+					// grid: {
+					// 	left:this.resize(50),
+					// 	top: this.resize(45),
+					// 	right: this.resize(20),
+					// 	bottom: this.resize(20)
+					// },
 					grid: {
 						top: 45,
 						right: 20,
@@ -541,7 +547,7 @@
 							fill: '#9ab4ff',
 							textAlign: 'right',
 							text: '万条',
-							font: this.resize(14)+'px Microsoft YaHei'
+							font: this.resize(14) + 'px Microsoft YaHei'
 						}
 					}],
 					axisLabel: {
@@ -604,10 +610,11 @@
 	body {
 		padding: 0px;
 		margin: 0px;
-		width: 100%;
+		width: rem(1920);
 		// height: 100%;
 		height: rem(1080);
 		font-size: 1vw;
+		// overflow: hidden;
 
 		// @media screen and (max-width: 1200px) {
 		// 	font-size: 120px;
