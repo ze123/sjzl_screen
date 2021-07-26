@@ -50,15 +50,14 @@
 							<span>数据量</span>
 							<span>万条</span>
 						</div>
-						<div v-for="(item,index) in 5" class="s">
+						<div v-for="(item,index) in sjhj.yyxtl" class="s">
 							<div class="s-t"
 								:style="'background-image: url('+require('@/assets/sjhj/react'+(index+1)+'.png')+')'">
 								<span :style="{'background-color': colorArr2[index],'color':colorArr1[index]}"
 									class="s-t-f" v-text="'0'+(index+1)"></span>
-								<span :style="{'color':colorArr2[index]}" class="s-t-s"
-									v-text="'数据可视化'+sjhjArr[index]"></span>
+								<span :style="{'color':colorArr2[index]}" class="s-t-s" v-text="item.name"></span>
 							</div>
-							<div class="s-c" v-text="fillNum(index)"></div>
+							<div class="s-c" v-text="item.value"></div>
 						</div>
 					</div>
 					<div class="b-c-r">
@@ -66,17 +65,16 @@
 							<span>数据种类</span>
 							<span>万条</span>
 						</div>
-						<div v-for="(item,index) in 5" class="s">
+						<div v-for="(item,index) in sjhj.yyxtr" class="s">
 							<div class="s-f">
 								<div class="s-t">
 									<span :style="{'background-color': colorArr1[index]}" class="s-t-f"
 										v-text="'0'+(index+1)"></span>
-									<span :style="{'color':colorArr2[index]}" class="s-t-s"
-										v-text="'数据可视化'+sjhjArr[index]"></span>
+									<span :style="{'color':colorArr2[index]}" class="s-t-s" v-text="item.name"></span>
 								</div>
-								<div class="s-c" v-text="fillNum(index)"></div>
+								<div class="s-c" v-text="item.value"></div>
 							</div>
-							<div class="s-s" :style="{'border-top': '4px solid '+ colorArr2[index]}"> </div>
+							<div class="s-s" :style="{'border-top': '4px solid '+ colorArr1[index]}"> </div>
 						</div>
 					</div>
 				</div>
@@ -93,16 +91,14 @@
 						<img src="./assets/sjzc/icon1.png" alt="">
 						<div class="c-c">
 							<div class="c-c-t">数据资源种类</div>
-							<div class="c-c-c"><span
-									v-text="fakeData(100000)"></span><span>条</span></div>
+							<div class="c-c-c"><span v-text="fakeData(100000)"></span><span>条</span></div>
 						</div>
 					</div>
 					<div class="c-t s" style="margin-left: 20px;">
 						<img src="./assets/sjzc/icon2.png" alt="">
 						<div class="c-c">
 							<div class="c-c-t">数据总量</div>
-							<div class="c-c-c"><span
-									v-text="fakeData(100000)"></span><span>条</span></div>
+							<div class="c-c-c"><span v-text="fakeData(100000)"></span><span>条</span></div>
 						</div>
 					</div>
 				</div>
@@ -267,8 +263,12 @@
 					sjzl: [],
 					yyzs: this.fakeData(10000),
 					sjzyzl: this.fakeData(10000),
-					sjrzl: this.fakeData(10000)
+					sjrzl: this.fakeData(10000),
+					yyxtl: [],
+					yyxtr: [],
+					sjzz: []
 				},
+				sjzc: {},
 				sjhjArr: ['一', '二', '三', '四', '五'],
 				colorArr1: ["#ab2d5d", "#c47f3b", "#2d76cc", '#31a6c4', '#31a6c4'],
 				colorArr2: ["#fbcbde", "#ffe1c3", "#bddbff", '#D2F6FF', '#D2F6FF'],
@@ -281,11 +281,19 @@
 			}
 		},
 		created() {
+			if (location.search.includes("randomdata")) {
+				this.getFakeData();
+				return;
+			}
 			// 数据汇聚
 			this.getSjhjData();
+			// 数据资产
+			this.getSjzcData();
 		},
 		mounted() {
-			this.sjzzChartFun();
+			if (location.search.includes("randomdata")) {
+				this.sjzzChartFun();
+			}
 			this.sjrdChartFun();
 			// 响应式echart。添加防抖，每半秒重渲染
 			window.addEventListener("resize", this.resizeFun());
@@ -310,18 +318,37 @@
 					}
 					// console.log(this.style);
 					setTimeout(() => {
-						this.sjzzChart.resize();
-						this.sjrdChart.resize();
+						if (this.sjzzChart) {
+							this.sjzzChart.resize();
+						}
+						if (this.sjrdChart) {
+							this.sjrdChart.resize();
+						}
 					})
 				}, 500)
+			},
+			resize(px){
+				return px*innerWidth/1920;
 			},
 			getData(url, params) {
 				return axios.post(url, params ? params : {})
 			},
-			getSjhjData() {
+			getFakeData() {
 				for (var x = 0; x < 7; x++) {
-					this.sjhj.sjzl.push(Math.floor(Math.random() * 10))
+					this.sjhj.sjzl.push(Math.floor(Math.random() * (x + 3)))
 				}
+				for (var x = 0; x < 5; x++) {
+					this.sjhj.yyxtl.push({
+						name: '数据可视化' + this.sjhjArr[x],
+						value: this.fillNum(x)
+					})
+					this.sjhj.yyxtr.push({
+						name: '数据可视化' + this.sjhjArr[x],
+						value: this.fillNum(x)
+					})
+				}
+			},
+			getSjhjData() {
 				this.getData("/dataOrganization/view/queryCount").then(data => {
 					var data = data.data.data
 					this.sjhj.sjzl = [];
@@ -346,9 +373,40 @@
 					var data = data.data.data
 					this.sjhj.sjrzl = data;
 				})
+				this.getData("dataOrganization/view/applicationCountTop").then(data => {
+					var data = data.data.data
+					for (var x in data) {
+						this.sjhj.yyxtl.push({
+							name: x,
+							value: data[x]
+						})
+					}
+				})
+				this.getData("dataOrganization/view/dataResourceTypeTop").then(data => {
+					var data = data.data.data
+					for (var x in data) {
+						this.sjhj.yyxtr.push({
+							name: x,
+							value: data[x]
+						})
+					}
+				})
+				this.getData("dataOrganization/view/dataGrowth", {
+					data: 'year'
+				}).then(data => {
+					var data = data.data.data
+					this.sjhj.sjzz = data;
+					this.sjzzChartFun();
+				})
 			},
-			fakeData(num){
-				return Math.floor(Math.random()*num+num)
+			getSjzcData() {
+				this.getData("dataOrganization/view/dataAsset").then(data => {
+					var data = data.data.data
+					this.sjzc = data;
+				})
+			},
+			fakeData(num) {
+				return Math.floor(Math.random() * num + num)
 			},
 			fillNum(num) {
 				var r = "1";
@@ -358,6 +416,16 @@
 				return Math.ceil((Math.random() + 1) * r);
 			},
 			sjzzChartFun() {
+				let seriesData = [];
+				let arr = Object.keys(this.sjhj.sjzz)
+				if (arr.length != 0) {
+					for (var x of arr) {
+						seriesData.push(this.sjhj.sjzz[x])
+					}
+				} else {
+					seriesData = [820, 932, 901, 934, 1290, 1330, 1320, 1290, 820, 932, 901, 934]
+				}
+
 				// 基于准备好的dom，初始化echarts实例
 				this.sjzzChart = echarts.init(document.getElementById('sjzzChart'))
 				// 绘制图表
@@ -376,7 +444,7 @@
 						}
 					},
 					yAxis: {
-						name: '万条',
+						// name: '万条',
 						type: 'value',
 						splitLine: {
 							show: true,
@@ -386,14 +454,30 @@
 								type: 'solid',
 							}
 						},
-						// minorSplitLine:{
-						//  show: true,
-						// }
 					},
-
-					textStyle: {
-						color: '#9ab4ff',
-					},
+					graphic: [{
+						type: 'text',
+						z: 100,
+						left: this.resize(55),
+						top: '12',
+						style: {
+							fill: '#9ab4ff',
+							textAlign: 'right',
+							text: '万条',
+							font: this.resize(14)+'px Microsoft YaHei'
+						}
+					}, {
+						type: 'text',
+						z: 100,
+						right: this.resize(20),
+						top: '12',
+						style: {
+							fill: '#34abff',
+							textAlign: 'right',
+							text: '周\t\t\t\t\t月\t\t\t\t\t年',
+							font: this.resize(14)+'px Microsoft YaHei'
+						}
+					}],
 					axisLabel: {
 						color: '#9ab4ff',
 					},
@@ -403,7 +487,7 @@
 						bottom: 20
 					},
 					series: [{
-						data: [820, 932, 901, 934, 1290, 1330, 1320, 1290, 820, 932, 901, 934],
+						data: seriesData,
 						type: 'line',
 						smooth: true,
 						areaStyle: {
@@ -448,6 +532,18 @@
 						right: 20,
 						bottom: 20
 					},
+					graphic: [{
+						type: 'text',
+						z: 100,
+						right: this.resize(30),
+						top: '12',
+						style: {
+							fill: '#9ab4ff',
+							textAlign: 'right',
+							text: '万条',
+							font: this.resize(14)+'px Microsoft YaHei'
+						}
+					}],
 					axisLabel: {
 						color: '#9ab4ff',
 					},
@@ -479,7 +575,6 @@
 </script>
 
 <style lang="scss">
-	$fontSize:16px;
 	$fontColor:#34abff;
 	$fontColorgray:#9ab4ff;
 	$fontFamily:MicrosoftYaHei;
@@ -575,6 +670,8 @@
 
 				img {
 					margin-right: rem(10);
+					width: rem(54);
+					height: rem(54);
 				}
 
 				.c-c {
@@ -679,6 +776,7 @@
 
 						img {
 							margin-right: rem(10);
+							width: rem(70);
 						}
 
 						.f {
@@ -768,50 +866,64 @@
 
 					.b-c-l,
 					.b-c-r {
-						// width: 50%;
+						width: 50%;
+						box-sizing: border-box;
 
 						//rem(padding: 10);
 						.s {
 							display: flex;
 							align-items: center;
-							justify-content: space-between;
 							margin-bottom: rem(10);
 							padding-right: rem(10);
 							color: white;
+							height: rem(36);
 
 							.s-t {
 								display: flex;
 								align-items: center;
 								background-size: 100% 100%;
-								padding: rem(5)rem(30)rem(5)rem(10);
 								white-space: nowrap;
+								width: rem(153);
 
 								.s-t-f {
-									margin-right: rem(10);
+									margin: 0 rem(10);
 									padding: rem(2)rem(3);
 									border-radius: rem(3);
 								}
 
 								.s-t-s {
 									font-size: rem(14);
+									// width: rem(84);
+									overflow: hidden;
+									text-overflow: ellipsis;
 								}
-							}
-
-							.s-c {
-								margin-left: rem(20);
 							}
 						}
 					}
 
 					.b-c-l {
+						padding-right: 10px;
+
+						.f {
+							margin-left: rem(20);
+						}
+
 						.s {
 							background-color: #34416C;
-							margin-bottom: rem(15);
+							justify-content: space-between;
+
+							.s-t {
+								height: rem(36);
+
+								.s-t-s {
+									width: rem(84);
+								}
+							}
 						}
 					}
 
 					.b-c-r {
-						//rem(margin-left: 20);
+						padding-left: 10px;
 
 						.f {
 							margin-left: rem(2);
@@ -819,6 +931,8 @@
 
 						.s {
 							flex-direction: column;
+							justify-content: center;
+							margin-top: 6px;
 
 							.s-f {
 								display: flex;
@@ -835,6 +949,10 @@
 								height: rem(0);
 								width: 100%;
 								border-radius: rem(10);
+							}
+
+							.s-t .s-t-s {
+								width: rem(104);
 							}
 						}
 					}
@@ -877,7 +995,7 @@
 
 				>img {
 					margin-top: rem(50);
-					width: 92%;
+					width: rem(689);
 				}
 
 				.p {
@@ -956,10 +1074,27 @@
 						align-items: center;
 						flex-direction: column;
 
+						img {
+							width: rem(90);
+							height: rem(90);
+						}
+
 						.c-c-b {
 							margin-top: rem(20);
 						}
 					}
+				}
+
+				.f .c-icon {
+					background-color: rgba(255, 150, 52, 0.1);
+				}
+
+				.s .c-icon {
+					background-color: rgba(52, 224, 255, 0.1);
+				}
+
+				.r .c-icon {
+					background-color: rgba(193, 72, 245, 0.1);
 				}
 
 
