@@ -295,7 +295,9 @@
 				this.sjzzChartFun();
 			}
 			this.sjrdChartFun();
-			// 响应式echart。添加防抖，每半秒重渲染
+			
+			this.addOverflow();
+			// 响应式。添加防抖，每半秒重渲染
 			window.addEventListener("resize", this.resizeFun());
 		},
 		methods: {
@@ -312,6 +314,9 @@
 					}
 				}
 				return debounce(() => {
+					
+					this.addOverflow();
+					
 					this.style = {
 						width: this.resize(540) + "px",
 						height: this.resize(280) + "px"
@@ -326,6 +331,13 @@
 						}
 					})
 				}, 500)
+			},
+			addOverflow(){
+				if(innerWidth==screen.width && innerHeight==screen.height){
+					document.getElementsByTagName("html")[0].style['overflow']="hidden";
+				}else{
+					document.getElementsByTagName("html")[0].style['overflowX']="";
+				}
 			},
 			resize(px) {
 				return Math.ceil(px * innerWidth / 1920);
@@ -616,9 +628,10 @@
 		font-size: 1vw;
 		// overflow: hidden;
 
-		// @media screen and (max-width: 1200px) {
-		// 	font-size: 120px;
-		// }
+		@media screen and (max-width: 1200px) {
+			font-size: 12px;
+		}
+		
 		min-width: 1200px;
 		min-height: 768px;
 	}
