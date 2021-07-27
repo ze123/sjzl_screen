@@ -94,7 +94,7 @@
 							<div class="c-c-c"><span v-text="randomData(100000)"></span><span>条</span></div>
 						</div>
 					</div>
-					<div class="c-t s" style="margin-left: 20px;">
+					<div class="c-t s">
 						<img src="./assets/sjzc/icon2.png" alt="">
 						<div class="c-c">
 							<div class="c-c-t">数据总量</div>
@@ -295,7 +295,7 @@
 				this.sjzzChartFun();
 			}
 			this.sjrdChartFun();
-			
+
 			this.addOverflow();
 			// 响应式。添加防抖，每半秒重渲染
 			window.addEventListener("resize", this.resizeFun());
@@ -314,9 +314,9 @@
 					}
 				}
 				return debounce(() => {
-					
+
 					this.addOverflow();
-					
+
 					this.style = {
 						width: this.resize(540) + "px",
 						height: this.resize(280) + "px"
@@ -332,15 +332,15 @@
 					})
 				}, 500)
 			},
-			addOverflow(){
-				if(innerWidth==screen.width && innerHeight==screen.height){
-					document.getElementsByTagName("html")[0].style['overflow']="hidden";
-				}else{
-					document.getElementsByTagName("html")[0].style['overflowX']="";
+			addOverflow() {
+				if (innerWidth == screen.width && innerHeight == screen.height) {
+					document.getElementsByTagName("html")[0].style['overflow'] = "hidden";
+				} else {
+					document.getElementsByTagName("html")[0].style['overflow'] = "";
 				}
 			},
 			resize(px) {
-				return Math.ceil(px * innerWidth / 1920);
+				return Math.ceil(px * (innerWidth < 1200 ? 1200 : innerWidth) / 1920);
 			},
 			getData(url, params) {
 				return axios.post(url, params ? params : {})
@@ -631,7 +631,7 @@
 		@media screen and (max-width: 1200px) {
 			font-size: 12px;
 		}
-		
+
 		min-width: 1200px;
 		min-height: 768px;
 	}
@@ -922,7 +922,7 @@
 					}
 
 					.b-c-l {
-						padding-right: 10px;
+						padding-right: rem(10);
 
 						.f {
 							margin-left: rem(20);
@@ -943,7 +943,7 @@
 					}
 
 					.b-c-r {
-						padding-left: 10px;
+						padding-left: rem(10);
 
 						.f {
 							margin-left: rem(2);
@@ -952,7 +952,7 @@
 						.s {
 							flex-direction: column;
 							justify-content: center;
-							margin-top: 6px;
+							margin-top: rem(6);
 
 							.s-f {
 								display: flex;
@@ -1000,6 +1000,10 @@
 
 				@include a-c .c-t .c-c .c-c-c span:first-child {
 					font-size: rem(24);
+				}
+
+				.s {
+					margin-left: rem(20);
 				}
 			}
 
