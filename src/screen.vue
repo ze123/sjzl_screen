@@ -91,41 +91,41 @@
 						<img src="./assets/sjzc/icon1.png" alt="">
 						<div class="c-c">
 							<div class="c-c-t">数据资源种类</div>
-							<div class="c-c-c"><span v-text="randomData(100000)"></span><span>条</span></div>
+							<div class="c-c-c"><span v-text="sjzc.zl"></span><span>条</span></div>
 						</div>
 					</div>
 					<div class="c-t s">
 						<img src="./assets/sjzc/icon2.png" alt="">
 						<div class="c-c">
 							<div class="c-c-t">数据总量</div>
-							<div class="c-c-c"><span v-text="randomData(100000)"></span><span>条</span></div>
+							<div class="c-c-c"><span v-text="sjzc.sl"></span><span>条</span></div>
 						</div>
 					</div>
 				</div>
 				<div class="p p1">
 					<span>主题库</span>
-					<div><span v-text="randomData(10000)"></span><span>种</span></div>
-					<div><span v-text="randomData(10000)"></span><span>条</span></div>
+					<div><span v-text="sjzc.zhutizl"></span><span>种</span></div>
+					<div><span v-text="sjzc.zhutisl"></span><span>条</span></div>
 				</div>
 				<div class="p p2">
 					<span>专题库</span>
-					<div><span v-text="randomData(10000)"></span><span>种</span></div>
-					<div><span v-text="randomData(10000)"></span><span>条</span></div>
+					<div><span v-text="sjzc.zhuantizl"></span><span>种</span></div>
+					<div><span v-text="sjzc.zhuantisl"></span><span>条</span></div>
 				</div>
 				<div class="p p3">
 					<span>标签库</span>
-					<div><span v-text="randomData(10000)"></span><span>种</span></div>
-					<div><span v-text="randomData(10000)"></span><span>条</span></div>
+					<div><span v-text="sjzc.biaoqianzl"></span><span>种</span></div>
+					<div><span v-text="sjzc.biaoqiansl"></span><span>条</span></div>
 				</div>
 				<div class="p p4">
 					<span>标准库</span>
-					<div><span v-text="randomData(10000)"></span><span>种</span></div>
-					<div><span v-text="randomData(10000)"></span><span>条</span></div>
+					<div><span v-text="sjzc.biaozhunzl"></span><span>种</span></div>
+					<div><span v-text="sjzc.biaozhunsl"></span><span>条</span></div>
 				</div>
 				<div class="p p5">
 					<span>汇聚库</span>
-					<div><span v-text="randomData(10000)"></span><span>种</span></div>
-					<div><span v-text="randomData(10000)"></span><span>条</span></div>
+					<div><span v-text="sjzc.huijuzl"></span><span>种</span></div>
+					<div><span v-text="sjzc.huijusl"></span><span>条</span></div>
 				</div>
 				<img claszqs="b" src="./assets/sjzc/bg.png" alt="">
 			</div>
@@ -134,12 +134,12 @@
 					<div class="c-t">
 						<div class="c-c">
 							<div class="c-c-t">总量：</div>
-							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>万条</span>
+							<div class="c-c-c"><span v-text="sjzc.tupiansl"></span><span>万条</span>
 							</div>
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>条</span>
+							<div class="c-c-c"><span v-text="sjzc.tupianzl"></span><span>条</span>
 							</div>
 						</div>
 					</div>
@@ -152,12 +152,12 @@
 					<div class="c-t">
 						<div class="c-c">
 							<div class="c-c-t">总量：</div>
-							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>万条</span>
+							<div class="c-c-c"><span v-text="sjzc.wenjiansl"></span><span>万条</span>
 							</div>
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>条</span>
+							<div class="c-c-c"><span v-text="sjzc.wenjianzl"></span><span>条</span>
 							</div>
 						</div>
 					</div>
@@ -170,12 +170,12 @@
 					<div class="c-t">
 						<div class="c-c">
 							<div class="c-c-t">总量：</div>
-							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>万条</span>
+							<div class="c-c-c"><span v-text="sjzc.rizhisl"></span><span>万条</span>
 							</div>
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="randomData(1000)"></span><span>条</span>
+							<div class="c-c-c"><span v-text="sjzc.rizhizl"></span><span>条</span>
 							</div>
 						</div>
 					</div>
@@ -195,25 +195,25 @@
 				<div class="b-a">
 					<div class="b-t">
 						<div class="c-t-t">数据资源总数</div>
-						<div class="c-t-c f" v-text="randomData(10000)"></div>
+						<div class="c-t-c f" v-text="sjgx.sjzyzs"></div>
 					</div>
 					<div class="b-t">
 						<div class="c-t-t">数据总量</div>
-						<div class="c-t-c f" v-text="randomData(10000)"></div>
+						<div class="c-t-c f" v-text="sjgx.sjzl"></div>
 					</div>
 					<div class="b-t">
 						<div class="c-t-t">交换数据总量</div>
-						<div class="c-t-c f" v-text="randomData(10000)"></div>
+						<div class="c-t-c f" v-text="sjgx.jhsjzl"></div>
 					</div>
 				</div>
 				<div class="b-a">
 					<div class="b-t x">
 						<div class="c-t-t">访问接口用户数</div>
-						<div class="c-t-c m" v-text="randomData(10000)"></div>
+						<div class="c-t-c m" v-text="sjgx.fwjkyhs"></div>
 					</div>
 					<div class="b-t y">
 						<div class="c-t-t">访问接口总数</div>
-						<div class="c-t-c m" v-text="randomData(10000)"></div>
+						<div class="c-t-c m" v-text="sjgx.fwjkzs"></div>
 					</div>
 				</div>
 			</div>
@@ -221,22 +221,22 @@
 			<div class="a-c">
 				<div class="c-t f">
 					<div class="c-c">
-						<div class="c-c-t">数据资源种类</div>
-						<div class="c-c-c"><span v-text="randomData(10000)"></span><span>次</span>
+						<div class="c-c-t">接口访问次数</div>
+						<div class="c-c-c"><span v-text="sjgx.jrsj.todayInterfaceCount"></span><span>次</span>
 						</div>
 					</div>
 				</div>
 				<div class="c-t s">
 					<div class="c-c">
-						<div class="c-c-t">数据总量</div>
-						<div class="c-c-c"><span v-text="randomData(10000)"></span><span>个</span>
+						<div class="c-c-t">接口访问用户数</div>
+						<div class="c-c-c"><span v-text="sjgx.jrsj.userSize"></span><span>个</span>
 						</div>
 					</div>
 				</div>
 				<div class="c-t r">
 					<div class="c-c">
-						<div class="c-c-t">数据总量</div>
-						<div class="c-c-c"><span v-text="randomData(10000)"></span><span>万条</span>
+						<div class="c-c-t">接口访问数据量</div>
+						<div class="c-c-c"><span v-text="sjgx.jrsj.todayInterfaceDataCount"></span><span>万条</span>
 						</div>
 					</div>
 				</div>
@@ -266,9 +266,37 @@
 					sjrzl: this.randomData(10000),
 					yyxtl: [],
 					yyxtr: [],
-					sjzz: []
+					sjzz: {}
 				},
-				sjzc: {},
+				sjzc: {
+					zl:this.randomData(10000),
+					sl:this.randomData(10000),
+					zhutizl:this.randomData(10000),
+					zhutisl:this.randomData(10000),
+					zhuantizl:this.randomData(10000),
+					zhuantisl:this.randomData(10000),
+					biaoqianzl:this.randomData(10000),
+					biaoqiansl:this.randomData(10000),
+					biaozhunzl:this.randomData(10000),
+					biaozhunsl:this.randomData(10000),
+					huijuzl:this.randomData(10000),
+					huijusl:this.randomData(10000),
+					tupiansl:this.randomData(1000),
+					tupianzl:this.randomData(1000),
+					wenjiansl:this.randomData(1000),
+					wenjianzl:this.randomData(1000),
+					rizhisl:this.randomData(1000),
+					rizhizl:this.randomData(1000),
+				},
+				sjgx: {
+					sjzyzs: this.randomData(10000),
+					sjzl: this.randomData(10000),
+					fwjkzs: this.randomData(10000),
+					fwjkyhs: this.randomData(10000),
+					jhsjzl: this.randomData(10000),
+					jrsj: {},
+					rdsj: {}
+				},
 				sjhjArr: ['一', '二', '三', '四', '五'],
 				colorArr1: ["#ab2d5d", "#c47f3b", "#2d76cc", '#31a6c4', '#31a6c4'],
 				colorArr2: ["#fbcbde", "#ffe1c3", "#bddbff", '#D2F6FF', '#D2F6FF'],
@@ -289,12 +317,14 @@
 			this.getSjhjData();
 			// 数据资产
 			this.getSjzcData();
+			//数据共享
+			this.getSjgxData();
 		},
 		mounted() {
 			if (location.search.includes("randomdata")) {
 				this.sjzzChartFun();
+				this.sjrdChartFun();
 			}
-			this.sjrdChartFun();
 
 			this.addOverflow();
 			// 响应式。添加防抖，每半秒重渲染
@@ -387,6 +417,7 @@
 				})
 				this.getData("dataOrganization/view/applicationCountTop").then(data => {
 					var data = data.data.data
+					this.sjhj.yyxtl=[];
 					for (var x in data) {
 						this.sjhj.yyxtl.push({
 							name: x,
@@ -396,6 +427,7 @@
 				})
 				this.getData("dataOrganization/view/dataResourceTypeTop").then(data => {
 					var data = data.data.data
+					this.sjhj.yyxtr=[];
 					for (var x in data) {
 						this.sjhj.yyxtr.push({
 							name: x,
@@ -415,6 +447,41 @@
 				this.getData("dataOrganization/view/dataAsset").then(data => {
 					var data = data.data.data
 					this.sjzc = data;
+				})
+			},
+			getSjgxData() {
+				this.getData("contentProvider/selectDatasourceTotal").then(data => {
+					var data = data.data.data
+					this.sjgx.sjzyzs = data;
+				})
+				this.getData("contentProvider/selectTotalData").then(data => {
+					var data = data.data.data
+					this.sjgx.sjzl = data;
+				})
+				this.getData("contentProvider/selectInterfaceTotal").then(data => {
+					var data = data.data.data
+					this.sjgx.fwjkzs = data;
+				})
+				this.getData("contentProvider/selectInterfaceUserCount", {
+					fw: "1y"
+				}).then(data => {
+					var data = data.data.data
+					this.sjgx.fwjkyhs = data;
+				})
+				this.getData("contentProvider/exchangeDataCount", {
+					fw: "1y"
+				}).then(data => {
+					var data = data.data.data
+					this.sjgx.jhsjzl = data;
+				})
+				this.getData("contentProvider/todayInterfaceCount").then(data => {
+					var data = data.data.data
+					this.sjgx.jrsj = data;
+				})
+				this.getData("contentProvider/hotData").then(data => {
+					var data = data.data.data
+					this.sjgx.rdsj = data;
+					this.sjrdChartFun();
 				})
 			},
 			randomData(num) {
@@ -522,10 +589,20 @@
 				});
 			},
 			sjrdChartFun() {
-				let xAxisData = []
-				for (var x = 0; x < 7; x++) {
-					xAxisData.push("数据可视化")
+				let xAxisData = [],seriesData=[];
+				let arr = Object.keys(this.sjgx.rdsj)
+				if (arr.length != 0) {
+					for (var x of arr) {
+						seriesData.push(this.sjgx.rdsj[x].dataSize)
+						xAxisData.push(this.sjgx.rdsj[x].interfaceName);
+					}
+				} else {
+					for (var x = 0; x < 7; x++) {
+						xAxisData.push("数据可视化")
+					}
+					seriesData=[200, 150, 120, 80, 70, 50, 30];
 				}
+				
 				var that = this;
 				// 基于准备好的dom，初始化echarts实例
 				this.sjrdChart = echarts.init(document.getElementById('sjrdChart'))
@@ -578,7 +655,7 @@
 								return arr[params.dataIndex]
 							},
 						},
-						data: [200, 150, 120, 80, 70, 50, 30],
+						data: seriesData,
 						type: 'bar',
 						showBackground: true,
 						backgroundStyle: {
