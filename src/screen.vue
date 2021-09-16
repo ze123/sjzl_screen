@@ -15,7 +15,7 @@
 							<!-- <span v-for="(item,index) in 7" v-text="Math.floor(Math.random()*10)"></span> -->
 							<span v-for="(item,index) in sjhj.sjzl" v-text="item"></span>
 						</div>
-						条
+						万条
 					</div>
 				</div>
 				<div class="c-b">
@@ -30,7 +30,7 @@
 						<div class="f">数据资源种类</div>
 						<div class="s">
 							<span v-text="sjhj.sjzyzl">10304</span>
-							<span>种</span>
+							<span>类</span>
 						</div>
 					</div>
 					<div class="c-b-t">
@@ -48,7 +48,7 @@
 					<div class="b-c-l">
 						<div class="f">
 							<span>数据量</span>
-							<span>条</span>
+							<span>万条</span>
 						</div>
 						<div v-for="(item,index) in sjhj.yyxtl" class="s">
 							<div class="s-t"
@@ -63,7 +63,7 @@
 					<div class="b-c-r">
 						<div class="f">
 							<span>数据种类</span>
-							<span>条</span>
+							<span>类</span>
 						</div>
 						<div v-for="(item,index) in sjhj.yyxtr" class="s">
 							<div class="s-f">
@@ -91,7 +91,7 @@
 						<img src="./assets/sjzc/icon1.png" alt="">
 						<div class="c-c">
 							<div class="c-c-t">数据资源种类</div>
-							<div class="c-c-c"><span v-text="sjzc.zl"></span><span>条</span></div>
+							<div class="c-c-c"><span v-text="sjzc.zl"></span><span>类</span></div>
 						</div>
 					</div>
 					<div class="c-t s">
@@ -104,27 +104,27 @@
 				</div>
 				<div class="p p1">
 					<span>主题库</span>
-					<div><span v-text="sjzc.zhutizl"></span><span>种</span></div>
+					<div><span v-text="sjzc.zhutizl"></span><span>类</span></div>
 					<div><span v-text="sjzc.zhutisl"></span><span>条</span></div>
 				</div>
 				<div class="p p2">
 					<span>专题库</span>
-					<div><span v-text="sjzc.zhuantizl"></span><span>种</span></div>
+					<div><span v-text="sjzc.zhuantizl"></span><span>类</span></div>
 					<div><span v-text="sjzc.zhuantisl"></span><span>条</span></div>
 				</div>
 				<div class="p p3">
 					<span>标签库</span>
-					<div><span v-text="sjzc.biaoqianzl"></span><span>种</span></div>
+					<div><span v-text="sjzc.biaoqianzl"></span><span>类</span></div>
 					<div><span v-text="sjzc.biaoqiansl"></span><span>条</span></div>
 				</div>
 				<div class="p p4">
 					<span>标准库</span>
-					<div><span v-text="sjzc.biaozhunzl"></span><span>种</span></div>
+					<div><span v-text="sjzc.biaozhunzl"></span><span>类</span></div>
 					<div><span v-text="sjzc.biaozhunsl"></span><span>条</span></div>
 				</div>
 				<div class="p p5">
 					<span>汇聚库</span>
-					<div><span v-text="sjzc.huijuzl"></span><span>种</span></div>
+					<div><span v-text="sjzc.huijuzl"></span><span>类</span></div>
 					<div><span v-text="sjzc.huijusl"></span><span>条</span></div>
 				</div>
 				<img claszqs="b" src="./assets/sjzc/bg.png" alt="">
@@ -139,7 +139,7 @@
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="sjzc.tupianzl"></span><span>条</span>
+							<div class="c-c-c"><span v-text="sjzc.tupianzl"></span><span>类</span>
 							</div>
 						</div>
 					</div>
@@ -157,7 +157,7 @@
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="sjzc.wenjianzl"></span><span>条</span>
+							<div class="c-c-c"><span v-text="sjzc.wenjianzl"></span><span>类</span>
 							</div>
 						</div>
 					</div>
@@ -175,7 +175,7 @@
 						</div>
 						<div class="c-c">
 							<div class="c-c-t">种类：</div>
-							<div class="c-c-c"><span v-text="sjzc.rizhizl"></span><span>条</span>
+							<div class="c-c-c"><span v-text="sjzc.rizhizl"></span><span>类</span>
 							</div>
 						</div>
 					</div>
@@ -198,7 +198,7 @@
 						<div class="c-t-c f" v-text="sjgx.sjzyzs"></div>
 					</div>
 					<div class="b-t">
-						<div class="c-t-t">数据总量</div>
+						<div class="c-t-t">数据总量(万)</div>
 						<div class="c-t-c f" v-text="sjgx.sjzl"></div>
 					</div>
 					<div class="b-t">
@@ -222,21 +222,21 @@
 				<div class="c-t f">
 					<div class="c-c">
 						<div class="c-c-t">接口访问次数</div>
-						<div class="c-c-c"><span v-text="sjgx.jrsj.todayInterfaceCount"></span><span>次</span>
+						<div class="c-c-c"><span v-text="sjgx.jrsj.jkfwcs"></span><span>次</span>
 						</div>
 					</div>
 				</div>
 				<div class="c-t s">
 					<div class="c-c">
 						<div class="c-c-t">接口访问用户数</div>
-						<div class="c-c-c"><span v-text="sjgx.jrsj.userSize"></span><span>个</span>
+						<div class="c-c-c"><span v-text="sjgx.jrsj.jkfwhyhs"></span><span>个</span>
 						</div>
 					</div>
 				</div>
 				<div class="c-t r">
 					<div class="c-c">
 						<div class="c-c-t">接口访问数据量</div>
-						<div class="c-c-c"><span v-text="sjgx.jrsj.todayInterfaceDataCount"></span><span>条</span>
+						<div class="c-c-c"><span v-text="sjgx.jrsj.jkfwsjl"></span><span>条</span>
 						</div>
 					</div>
 				</div>
@@ -318,13 +318,13 @@
 			// 数据资产
 			this.getSjzcData();
 			//数据共享
-			// this.getSjgxData();
+			this.getSjgxData();
 		},
 		mounted() {
-			if (location.search.includes("randomdata")) {
-				this.sjzzChartFun();
-				this.sjrdChartFun();
-			}
+			// if (location.search.includes("randomdata")) {
+			// 	this.sjzzChartFun();
+			// 	this.sjrdChartFun();
+			// }
 
 			this.addOverflow();
 			// 响应式。添加防抖，每半秒重渲染
@@ -377,6 +377,25 @@
 					name: params
 				} : {})
 			},
+			getData2(url, params) {
+				return axios.post(url, params ? params : {})
+			},
+			splitdata(num) {
+				var l = num.length,
+					r = "",
+					s = num.split("").reverse();
+				if (l < 3) {
+					return num;
+				}
+				for (var x in s) {
+					if (x != 0 && x % 3 == 0) {
+						r += "," + s[x]
+					} else {
+						r += s[x]
+					}
+				}
+				return (r.split("").reverse()).join("");
+			},
 			getrandomData() {
 				for (var x = 0; x < 7; x++) {
 					this.sjhj.sjzl.push(Math.floor(Math.random() * (x + 3)))
@@ -406,12 +425,17 @@
 				this.sjzc.biaozhunsl = this.randomData(10000)
 				this.sjzc.huijuzl = this.randomData(10000)
 				this.sjzc.huijusl = this.randomData(10000)
-				this.sjzc.huijusl = tupiansl = this.randomData(1000)
-				this.sjzc.huijusl = tupianzl = this.randomData(1000)
-				this.sjzc.huijusl = wenjiansl = this.randomData(1000)
-				this.sjzc.huijusl = wenjianzl = this.randomData(1000)
-				this.sjzc.huijusl = rizhisl = this.randomData(1000)
-				this.sjzc.huijusl = rizhizl = this.randomData(1000)
+				this.sjzc.tupiansl = this.randomData(1000)
+				this.sjzc.tupianzl = this.randomData(1000)
+				this.sjzc.wenjiansl = this.randomData(1000)
+				this.sjzc.wenjianzl = this.randomData(1000)
+				this.sjzc.rizhisl = this.randomData(1000)
+				this.sjzc.rizhizl = this.randomData(1000)
+				this.sjgx.sjzyzs = this.randomData(10000)
+				this.sjgx.sjzl = this.randomData(10000)
+				this.sjgx.fwjkzs = this.randomData(10000)
+				this.sjgx.fwjkyhs = this.randomData(10000)
+				this.sjgx.jhsjzl = this.randomData(10000)
 			},
 			getSjhjData() {
 				this.getData("接入数据数据总量").then(data => {
@@ -430,118 +454,162 @@
 					var data = data.data.data[0]
 					this.sjhj.yyzs = data.total;
 				})
+
 				this.getData("接入数据数据资源种类").then(data => {
 					var data = data.data.data[0]
 					this.sjhj.sjzyzl = data.total;
 				})
+
 				this.getData("接入数据数据日增量").then(data => {
 					var data = data.data.data[0]
 					this.sjhj.sjrzl = data.total;
 				})
 				this.getData("应用系统数据量").then(data => {
 					var data = data.data.data
-					this.sjhj.yyxtl = [];
-					for (var x in data) {
-						this.sjhj.yyxtl.push({
-							name: '数据可视化' + this.sjhjArr[x],
-							value: data[x].total
-						})
-					}
+					handleData(this.sjhj.yyxtl, data, "value");
+					// for (var x in data) {
+					// 	this.sjhj.yyxtl[x].value = data[x].total;
+					// 	// this.sjhj.yyxtl.push({
+					// 	// 	// name: '数据可视化' + this.sjhjArr[x],
+					// 	// 	value: data[x].total
+					// 	// })
+					// }
 				})
 				this.getData("应用系统数据种类").then(data => {
 					var data = data.data.data
-					this.sjhj.yyxtr = [];
-					for (var x in data) {
-						this.sjhj.yyxtr.push({
-							name: '数据可视化' + this.sjhjArr[x],
-							value: data[x].total
-						})
-					}
+					handleData(this.sjhj.yyxtr, data, "value");
+				})
+				this.getData("应用名称").then(data => {
+					var data = data.data.data
+					handleData(this.sjhj.yyxtl, data, "name");
+					// this.sjhj.yyxtl[x].name = data[x].total;
+					// for (var x in data) {
+					// 	this.sjhj.yyxtl.push({
+					// 		name: data[x].total,
+					// 	})
+					// }
+				})
+				this.getData("应用种类").then(data => {
+					var data = data.data.data
+					handleData(this.sjhj.yyxtr, data, "name");
+					// this.sjhj.yyxtr[x].name = data[x].total;
+					// for (var x in data) {
+					// 	this.sjhj.yyxtr.push({
+					// 		name: data[x].total,
+					// 	})
+					// }
 				})
 				this.getData("数据增长情况年").then(data => {
 					var data = data.data.data
 					this.sjhj.sjzz = data;
 					this.sjzzChartFun();
 				})
+
+				function handleData(re, data, key) {
+					if (re == "") {
+						for (var x in data) {
+							var obj = {};
+							obj[key] = data[x].total
+							re.push(obj)
+						}
+					} else {
+						for (var x in data) {
+							re[x][key] = data[x].total;
+						}
+					}
+				}
 			},
 			getSjzcData() {
 				this.getData("数据资产").then(data => {
 					var data = data.data.data[0]
 					this.sjzc.sl = data.total;
 					this.sjzc.zl = data.kind;
+					this.sjzc.sl = this.splitdata(this.sjzc.sl.trim());
 				})
 				this.getData("主题库").then(data => {
 					var data = data.data.data[0]
 					this.sjzc.zhutisl = data.total;
 					this.sjzc.zhutizl = data.kind;
+					this.sjzc.zhutisl = this.splitdata(this.sjzc.zhutisl.trim());
 				})
 				this.getData("专题库").then(data => {
 					var data = data.data.data[0]
 					this.sjzc.zhuantisl = data.total;
 					this.sjzc.zhuantizl = data.kind;
+					this.sjzc.zhuantisl = this.splitdata(this.sjzc.zhuantisl.trim());
 				})
 				this.getData("标签库").then(data => {
 					var data = data.data.data[0]
 					this.sjzc.biaoqiansl = data.total;
 					this.sjzc.biaoqianzl = data.kind;
+					this.sjzc.biaoqiansl = this.splitdata(this.sjzc.biaoqiansl.trim());
 				})
 				this.getData("标准库").then(data => {
 					var data = data.data.data[0]
 					this.sjzc.biaozhunsl = data.total;
 					this.sjzc.biaozhunzl = data.kind;
+					this.sjzc.biaozhunsl = this.splitdata(this.sjzc.biaozhunsl.trim());
 				})
 				this.getData("汇聚库").then(data => {
 					var data = data.data.data[0]
 					this.sjzc.huijusl = data.total;
 					this.sjzc.huijuzl = data.kind;
+					this.sjzc.huijusl = this.splitdata(this.sjzc.huijusl.trim());
 				})
 				this.getData("图片库").then(data => {
 					var data = data.data.data[0]
 					this.sjzc.tupiansl = data.total;
 					this.sjzc.tupianzl = data.kind;
+					this.sjzc.tupiansl = this.splitdata(this.sjzc.tupiansl.trim());
 				})
 				this.getData("文件库").then(data => {
 					var data = data.data.data[0]
 					this.sjzc.wenjiansl = data.total;
 					this.sjzc.wenjianzl = data.kind;
+					this.sjzc.wenjiansl = this.splitdata(this.sjzc.wenjiansl.trim());
 				})
 				this.getData("日志库").then(data => {
 					var data = data.data.data[0]
 					this.sjzc.rizhisl = data.total;
 					this.sjzc.rizhizl = data.kind;
+					this.sjzc.rizhisl = this.splitdata(this.sjzc.rizhisl.trim());
 				})
 			},
 			getSjgxData() {
-				this.getData("contentProvider/selectDatasourceTotal").then(data => {
+				this.getData("共享数据资源总数").then(data => {
 					var data = data.data.data[0]
-					this.sjgx.sjzyzs = data;
+					this.sjgx.sjzyzs = data.total;
 				})
-				this.getData("contentProvider/selectTotalData").then(data => {
+				this.getData("共享数据总量").then(data => {
 					var data = data.data.data[0]
-					this.sjgx.sjzl = data;
+					this.sjgx.sjzl = data.total;
 				})
-				this.getData("contentProvider/selectInterfaceTotal").then(data => {
+				this.getData("共享访问接口总数").then(data => {
 					var data = data.data.data[0]
-					this.sjgx.fwjkzs = data;
+					this.sjgx.fwjkzs = data.total;
 				})
-				this.getData("contentProvider/selectInterfaceUserCount", {
-					fw: "1y"
-				}).then(data => {
+				this.getData("共享访问接口用户数").then(data => {
 					var data = data.data.data[0]
-					this.sjgx.fwjkyhs = data;
+					this.sjgx.fwjkyhs = data.total;
 				})
-				this.getData("contentProvider/exchangeDataCount", {
-					fw: "1y"
-				}).then(data => {
+				this.getData("共享交换数据总量").then(data => {
 					var data = data.data.data[0]
-					this.sjgx.jhsjzl = data;
+					this.sjgx.jhsjzl = data.total;
 				})
-				this.getData("contentProvider/todayInterfaceCount").then(data => {
+				this.getData("共享接口访问次数").then(data => {
 					var data = data.data.data[0]
-					this.sjgx.jrsj = data;
+					this.sjgx.jrsj.jkfwcs = data.total;
 				})
-				this.getData("contentProvider/hotData").then(data => {
+				this.getData("共享接口访问用户数").then(data => {
 					var data = data.data.data[0]
+					this.sjgx.jrsj.jkfwhyhs = data.total;
+				})
+				this.getData("共享接口访问数据量").then(data => {
+					var data = data.data.data[0]
+					this.sjgx.jrsj.jkfwsjl = data.total;
+				})
+				this.getData("热点数据").then(data => {
+					var data = data.data.data
 					this.sjgx.rdsj = data;
 					this.sjrdChartFun();
 				})
@@ -558,14 +626,14 @@
 			},
 			sjzzChartFun() {
 				let seriesData = [];
-				let arr = Object.keys(this.sjhj.sjzz)
-				if (arr.length != 0) {
-					for (var x of arr) {
+				if (this.sjhj.sjzz.length != 0) {
+					for (var x in this.sjhj.sjzz) {
 						seriesData.push(this.sjhj.sjzz[x].total)
 					}
-				} else {
-					seriesData = [820, 932, 901, 934, 1290, 1330, 1320, 1290, 820, 932, 901, 934]
-				}
+				} 
+				// else {
+				// 	seriesData = [820, 932, 901, 934, 1290, 1330, 1320, 1290, 820, 932, 901, 934]
+				// }
 
 				// 基于准备好的dom，初始化echarts实例
 				this.sjzzChart = echarts.init(document.getElementById('sjzzChart'))
@@ -653,18 +721,18 @@
 			sjrdChartFun() {
 				let xAxisData = [],
 					seriesData = [];
-				let arr = Object.keys(this.sjgx.rdsj)
-				if (arr.length != 0) {
-					for (var x of arr) {
-						seriesData.push(this.sjgx.rdsj[x].dataSize)
-						xAxisData.push(this.sjgx.rdsj[x].interfaceName);
+				if (this.sjgx.rdsj.length != 0) {
+					for (var x in this.sjgx.rdsj) {
+						seriesData.push(this.sjgx.rdsj[x].total)
+						xAxisData.push(this.sjgx.rdsj[x].kind);
 					}
-				} else {
-					for (var x = 0; x < 7; x++) {
-						xAxisData.push("数据可视化")
-					}
-					seriesData = [200, 150, 120, 80, 70, 50, 30];
-				}
+				} 
+				// else {
+				// 	for (var x = 0; x < 7; x++) {
+				// 		xAxisData.push("数据可视化")
+				// 	}
+				// 	seriesData = [200, 150, 120, 80, 70, 50, 30];
+				// }
 
 				var that = this;
 				// 基于准备好的dom，初始化echarts实例
@@ -1300,6 +1368,7 @@
 							font-size: rem(14);
 							margin-bottom: rem(5);
 							margin-top: rem(10);
+							white-space: nowrap;
 						}
 
 						.c-t-c {
